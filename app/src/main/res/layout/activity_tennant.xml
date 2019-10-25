@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LandlordActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/top_color"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+
+
+        <TextView
+            android:layout_height="90dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="90dp"
+            style="@style/toolBarText"
+            android:textSize="20dp"
+            android:text="@string/property_list"
+            app:fontFamily="@font/stalinist_one">
+        </TextView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="511dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="91dp"
+        android:layout_marginBottom="57dp">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/landlord_list_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/landlord_bottom_nva"
+        android:background="@color/top_color"
+        app:itemIconTint="@color/text_color"
+        app:itemTextColor="@color/text_color"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu_items_tennant">
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</RelativeLayout>

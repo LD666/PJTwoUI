@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">PJTwoUI</string>
+
+    <string name="longin">LogIn</string>
+
+    <string name="email">Email</string>
+
+    <string name="password">Password</string>
+
+    <string name="forgot">Forgot</string>
+
+    <string name="signin">SingIn</string>
+
+    <string name="forgot_one">Enter your email to get password back</string>
+
+    <string name="forgot_two">Here is your password</string>
+
+    <string name="property_list"> Property List</string>
+
+    <string name="all_list"> All Listing</string>
+
+</resources>
