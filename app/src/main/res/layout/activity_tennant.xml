@@ -22,7 +22,7 @@
             android:layout_marginLeft="90dp"
             style="@style/toolBarText"
             android:textSize="20dp"
-            android:text="@string/property_list"
+            android:text="@string/all_list"
             app:fontFamily="@font/stalinist_one">
         </TextView>
 
