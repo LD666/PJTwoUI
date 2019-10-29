@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">PJTwoUI</string>
 
+    <string name="welcome">Welcome</string>
+
+    <string name="register">Register</string>
+
     <string name="longin">LogIn</string>
 
     <string name="email">Email</string>
@@ -18,5 +22,22 @@
     <string name="property_list"> Property List</string>
 
     <string name="all_list"> All Listing</string>
+
+    <string name="property_add"> Property Add</string>
+
+    <string name="property_remove"> Property Remove</string>
+
+    <string name="tenant_add"> Tenant Add</string>
+
+    <string name="tenant_List"> Tenant List</string>
+
+    <string name="landlord">Landlord</string>
+
+    <string name="tenant">Tenant</string>
+
+    <string name="tenant_info">Tenant Info</string>
+
+    <string name="sign_out">Sign Out</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

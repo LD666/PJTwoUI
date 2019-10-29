@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity.WelcomeMainActivity"
+    android:orientation="vertical"
+    android:id="@+id/welcome_act">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/top_color"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_marginLeft="40dp"
+            style="@style/toolBarText"
+            android:text="@string/welcome">
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@color/top_color">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:background="@color/text_color">
+
+            <ImageView
+                style="@style/mainImg"
+                android:layout_width="304dp"
+                android:layout_height="335dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_to_register"
+                    android:text="@string/register"
+                    app:cornerRadius="20dp"
+                    style="@style/button"
+                    android:layout_marginTop="0dp">
+                </com.google.android.material.button.MaterialButton>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_marginLeft="25dp"
+                    app:cornerRadius="20dp"
+                    android:id="@+id/button_to_login"
+                    android:text="@string/longin"
+                    style="@style/button"
+                    android:layout_marginTop="0dp">
+                </com.google.android.material.button.MaterialButton>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

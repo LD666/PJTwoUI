@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.LandlordActivity"
-    android:id="@+id/landlord_main">
+    tools:context=".activity.LandlordActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
@@ -16,7 +15,7 @@
         app:itemIconTint="@color/text_color"
         app:itemTextColor="@color/text_color"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/menu_items_landlord">
+        app:menu="@menu/menu_items_tenant">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </RelativeLayout>

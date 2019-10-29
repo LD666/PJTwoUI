@@ -1,100 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".RegiserActivity"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+            name="registerdata"
+            type="com.myfirstapplication.pjtwoui.viewmodel.RegisterViewModel" />
+    </data>
 
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:background="@color/top_color"
-        android:orientation="horizontal"
-        android:padding="10dp">
-
-
-        <ImageView
-            android:id="@+id/signin_back"
-            style="@style/toolBarsImg" />
-
-
-        <TextView
-            style="@style/toolBarText"
-            android:text="@string/signin">
-        </TextView>
-
-    </LinearLayout>
-
-    <LinearLayout
+        android:id="@+id/root_register"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="20dp"
-        android:background="@color/top_color">
+        tools:context=".activity.RegisterActivity"
+
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@color/top_color"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+
+            <ImageView
+                android:id="@+id/signin_back"
+                style="@style/toolBarsImg"
+                android:layout_width="wrap_content" />
+
+
+            <TextView
+                style="@style/toolBarText"
+                android:text="@string/signin">
+            </TextView>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="20dp"
-            android:background="@color/text_color">
+            android:background="@color/top_color">
 
-            <com.google.android.material.textfield.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="@color/text_color">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edit_text_MainEmail"
-                    android:hint="Email"
-                    style="@style/signUpInEditTextStyle">
-                </com.google.android.material.textfield.TextInputEditText>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text_MainEmail"
+                        android:hint="Email"
+                        android:inputType="text"
+                        android:text="@={registerdata.email}"
+                        style="@style/signUpInEditTextStyle">
+                    </com.google.android.material.textfield.TextInputEditText>
 
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edit_text_landEmail"
-                    android:hint="Landlord Email"
-                    style="@style/signUpInEditTextStyle">
-                </com.google.android.material.textfield.TextInputEditText>
-
-            </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edit_text_regPassword"
-                    android:hint="Password"
-                    style="@style/signUpInEditTextStyle">
-                </com.google.android.material.textfield.TextInputEditText>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text_landEmail"
+                        android:hint="Landlord Email"
+                        android:inputType="text"
+                        android:text="@={registerdata.landlordEmail}"
+                        style="@style/signUpInEditTextStyle">
+                    </com.google.android.material.textfield.TextInputEditText>
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <Button
-                android:id="@+id/button_register"
-                android:text="Register"
-                style="@style/button"
-                android:layout_marginTop="0dp">
-            </Button>
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-            <ImageView
-                style="@style/mainImg"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text_regPassword"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:text="@={registerdata.password}"
+                        style="@style/signUpInEditTextStyle">
+                    </com.google.android.material.textfield.TextInputEditText>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal">
+
+
+                    <RadioGroup
+                        android:layout_width="180dp"
+                        android:layout_height="match_parent" >
+
+                        <RadioButton
+                            android:onClick="@{registerdata::isLandlord}"
+                            android:layout_marginTop="15dp"
+                            android:id="@+id/isLandlord"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/landlord" />
+
+                        <RadioButton
+                            android:onClick="@{registerdata::isTenant}"
+                            android:id="@+id/isTenant"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tenant" />
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:onClick="@{registerdata::onRegister}"
+                            app:cornerRadius="20dp"
+                            android:id="@+id/button_register"
+                            android:text="@string/register"
+                            style="@style/button"
+                            android:layout_marginTop="0dp">
+                        </com.google.android.material.button.MaterialButton>
+
+
+<!--                        <com.google.android.material.button.MaterialButton-->
+<!--                            app:cornerRadius="20dp"-->
+<!--                            android:id="@+id/button_register_google"-->
+<!--                            android:text="@string/register"-->
+<!--                            style="@style/button"-->
+<!--                            android:layout_marginTop="5dp">-->
+<!--                        </com.google.android.material.button.MaterialButton>-->
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:layout_marginTop="10dp"
+                    style="@style/mainImg"/>
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
 
     </LinearLayout>
 
-
-</LinearLayout>
+</layout>

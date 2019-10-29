@@ -9,7 +9,7 @@
     <item
         android:id="@+id/item_ten"
         android:icon="@drawable/ic_people_black_24dp"
-        android:title="Tennants" />
+        android:title="Tenants" />
     <item
         android:id="@+id/item_map"
         android:icon="@drawable/ic_person_pin_circle_black_24dp"
