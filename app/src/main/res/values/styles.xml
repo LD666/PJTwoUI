@@ -33,6 +33,7 @@
     </style>
 
     <style name="signUpInEditTextStyle">
+        <item name="android:inputType">text</item>
         <item name="android:maxLines">1</item>
         <item name="backgroundTint">@color/top_color</item>
         <item name="android:textColor">@color/top_color</item>
@@ -58,5 +59,13 @@
         <item name="android:src">@drawable/bg_img</item>
     </style>
 
+    <style name="property_list">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:textColor">@color/top_color</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:gravity">center</item>
+    </style>
 
 </resources>

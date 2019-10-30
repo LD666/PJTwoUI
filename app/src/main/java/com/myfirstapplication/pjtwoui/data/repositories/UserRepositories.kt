@@ -1,10 +1,13 @@
 package com.myfirstapplication.pjtwoui.data.repositories
 
+import android.content.Context
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
+import com.myfirstapplication.pjtwoui.data.mydataclass.PropertyList
+import com.myfirstapplication.pjtwoui.data.mydataclass.mysharedpreferences.MyShared
 import com.myfirstapplication.pjtwoui.data.network.UserApi
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -64,52 +67,18 @@ class UserRepositories {
                 override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
 
                     loginResponse.value = response.body()
-//                        Log.i("res", loginResponse.value.toString())
+                    var userID = loginResponse.value?.get("userid")?.asString
+                    var type = loginResponse.value?.get("usertype")?.asString
 
+                    var userInfo = MyApplication.context.getSharedPreferences("saveUserInfo", Context.MODE_PRIVATE)
+                    var editor = userInfo.edit()
 
+                    editor.putString("uid", userID)
+                    editor.putString("utype", type)
+                    editor.commit()
 
-//                    var msg = loginResponse.value?.get("msg")?.asString
-
-//                    if (msg  == "success"){
-//                        var userid = loginResponse.value?.get("userid")?.asString
-//                        var usertype = loginResponse.value?.get("usertype")?.asString
-//                        var useremail = loginResponse.value?.get("useremail")?.asString
-//                        var appapikey = loginResponse.value?.get("appapikey")?.asString
-//
-//
-//                        str.add(msg)
-//                        str.add(userid!!)
-//                        str.add(usertype!!)
-//                        str.add(useremail!!)
-//                        str.add(appapikey!!)
-//                    }
-
-
-
-//                        Log.i("res", msg)
-//                        Log.i("res", userid)
-//                        Log.i("res", usertype)
-//                        Log.i("res", useremail)
-//                        Log.i("res", appapikey)
-
-
-//                        var context: Context? = null
-//                        var saveMyUser = context?.getSharedPreferences("saveUser", Context.MODE_PRIVATE)
-//                        var editor = saveMyUser?.edit()
-//
-//                        editor?.putString("loginMsg", msg)
-//                        editor?.putString("loginUserid", userid)
-//                        editor?.putString("loginUsertype", usertype)
-//                        editor?.putString("loginUseremail", useremail)
-//                        editor?.putString("loginAppapikey", appapikey)
-//                        editor?.commit()
-//
-//
-//                        Log.i("isSave", saveMyUser?.getString("loginMsg", null))
-//                        Log.i("isSave", saveMyUser?.getString("loginUserid", null))
-//                        Log.i("isSave", saveMyUser?.getString("loginUsertype", null))
-//                        Log.i("isSave", saveMyUser?.getString("loginUseremail", null))
-//                        Log.i("isSave", saveMyUser?.getString("loginAppapikey", null))
+//                    Log.i("uinfo", userID.toString())
+//                    Log.i("uinfo", type.toString())
 
                 }
 
@@ -130,10 +99,10 @@ class UserRepositories {
 
             }
 
-
             override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
 
                 forgotPasswordResponse.value = response.body()
+
 
 //                var getPass = forgotPasswordResponse.value?.get("userpassword").toString()
 //                Log.i("getBackPassword", getPass)
@@ -146,24 +115,95 @@ class UserRepositories {
     }
 
 
-    fun list (userID: String, type: String): LiveData<JsonArray>{
+    fun list (): LiveData<PropertyList>{
 
-        var listResponse = MutableLiveData<JsonArray>()
+        var listResponse = MutableLiveData<PropertyList>()
 
-        UserApi().proList(userID, type).enqueue(object: Callback<JsonArray>{
+        var userInfo = MyApplication.context.getSharedPreferences("saveUserInfo", Context.MODE_PRIVATE)
 
-            override fun onFailure(call: Call<JsonArray>, t: Throwable) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        var userID = userInfo.getString("uid", null)
+        var type = userInfo.getString("utype", null)
+
+        Log.i("uinfoList", userID.toString())
+        Log.i("uinfoList", type.toString())
+
+        UserApi().proList(userID!!, type!!).enqueue(object: Callback<PropertyList>{
+
+            override fun onFailure(call: Call<PropertyList>, t: Throwable) {
+
             }
 
 
-            override fun onResponse(call: Call<JsonArray>, response: Response<JsonArray>) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            override fun onResponse(call: Call<PropertyList>, response: Response<PropertyList>) {
+                listResponse.value = response.body()
+
+//                Log.i("www", listResponse.value.toString())
+
             }
 
         })
 
         return listResponse
     }
+
+    fun addPro(
+        address: String,
+        city: String,
+        state: String,
+        country: String,
+        pro_status: String,
+        status: String,
+        mortage_info: String,
+        latitude: String,
+        longitude: String
+    ): LiveData<JsonObject>{
+
+        var addProResponse = MutableLiveData<JsonObject>()
+
+        var userInfo = MyApplication.context.getSharedPreferences("saveUserInfo", Context.MODE_PRIVATE)
+        var userID = userInfo.getString("uid", null)
+        var type = userInfo.getString("utype", null)
+
+
+        UserApi().addProperty(address, city, state, country, pro_status, status, mortage_info, userID!!, type!!, latitude, longitude)
+            .enqueue(object: Callback<JsonObject>{
+
+                override fun onFailure(call: Call<JsonObject>, t: Throwable) {
+
+                }
+
+
+                override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
+                    addProResponse.value = response.body()
+                }
+
+            })
+
+        return addProResponse
+
+    }
+
+
+    fun removePro(proId: String): LiveData<JsonObject>{
+
+        var removeProResponse = MutableLiveData<JsonObject>()
+
+
+        UserApi().removeProperty(proId).enqueue(object: Callback<JsonObject>{
+
+            override fun onFailure(call: Call<JsonObject>, t: Throwable) {
+
+            }
+
+
+            override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
+
+            }
+
+        })
+
+        return removeProResponse
+    }
+
 
 }

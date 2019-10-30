@@ -11,12 +11,23 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/landlord_bottom_nva"
+        android:id="@+id/landlord_bottom_nva_landlord"
         android:background="@color/top_color"
         app:itemIconTint="@color/text_color"
         app:itemTextColor="@color/text_color"
         android:layout_alignParentBottom="true"
         app:menu="@menu/menu_items_landlord">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/landlord_list_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="602dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="-1dp" />
 
 </RelativeLayout>

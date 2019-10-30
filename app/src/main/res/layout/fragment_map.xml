@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="600dp">
+    android:layout_height="600dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/top_color"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/landlord_list_back"
+            style="@style/toolBarsImg"
+            android:layout_width="38dp" />
+
+        <TextView
+            android:layout_height="90dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="50dp"
+            style="@style/toolBarText"
+            android:textSize="20dp"
+            android:text="@string/title_activity_maps"
+            app:fontFamily="@font/stalinist_one">
+        </TextView>
+
+    </LinearLayout>
+
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/map_view"

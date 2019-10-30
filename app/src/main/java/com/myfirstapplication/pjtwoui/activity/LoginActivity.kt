@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.google.gson.JsonObject
 import com.myfirstapplication.pjtwoui.R
+import com.myfirstapplication.pjtwoui.data.repositories.MyApplication
 import com.myfirstapplication.pjtwoui.databinding.ActivityLoginBinding
 import com.myfirstapplication.pjtwoui.myinterface.LoginInterface
 import com.myfirstapplication.pjtwoui.viewmodel.LoginViewModel
@@ -26,45 +27,17 @@ class LoginActivity : AppCompatActivity(), LoginInterface {
             var msg = it.get("msg").asString
             Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
 
-            var userid = it.get("userid")?.asString
-            var usertype = it.get("usertype")?.asString
-            var useremail = it.get("useremail")?.asString
-            var appapikey = it.get("appapikey")?.asString
+            var userInfo = MyApplication.context.getSharedPreferences("saveUserInfo", Context.MODE_PRIVATE)
+            var usertype = userInfo.getString("utype", null)
 
-            var saveUserInfo = getSharedPreferences("saveUserInfo", Context.MODE_PRIVATE)
-            var editor = saveUserInfo.edit()
 
-            if (userid!= null && usertype != null && useremail != null && appapikey != null){
-                Log.i("res", msg)
-                Log.i("res", userid)
-                Log.i("res", usertype)
-                Log.i("res", useremail)
-                Log.i("res", appapikey)
-
-                editor.putString("loginMsg", msg)
-                editor.putString("loginUserid", userid)
-                editor.putString("loginUsertype", usertype)
-                editor.putString("loginUseremail", useremail)
-                editor.putString("loginAppapikey", appapikey)
-                editor.commit()
-
-                if(usertype == "landlord"){
-                    var myIntent = Intent(this, LandlordActivity::class.java)
-                    startActivity(myIntent)
-                }else{
-                    var myIntent = Intent(this, TennantActivity::class.java)
-                    startActivity(myIntent)
-                }
-
+            if(usertype == "landlord"){
+                var myIntent = Intent(this, LandlordActivity::class.java)
+                startActivity(myIntent)
+            }else{
+                var myIntent = Intent(this, TennantActivity::class.java)
+                startActivity(myIntent)
             }
-
-
-
-            Log.i("isSave", saveUserInfo.getString("loginMsg", null))
-            Log.i("isSave", saveUserInfo.getString("loginUserid", null))
-            Log.i("isSave", saveUserInfo.getString("loginUsertype", null))
-            Log.i("isSave", saveUserInfo.getString("loginUseremail", null))
-            Log.i("isSave", saveUserInfo.getString("loginAppapikey", null))
 
         })
     }

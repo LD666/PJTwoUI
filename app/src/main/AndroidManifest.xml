@@ -11,6 +11,7 @@
 
     <application
         android:allowBackup="true"
+        android:name=".data.repositories.MyApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:usesCleartextTraffic="true"
@@ -45,7 +46,14 @@
             <!--            </intent-filter>-->
         </activity>
         <activity android:name=".activity.LandlordTenantListActivity" />
-        <activity android:name=".activity.AddRemoveActivity" />
+        <activity android:name=".activity.AddRemoveActivity" >
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
         <activity android:name=".activity.TennantActivity" />
         <activity android:name=".activity.LandlordActivity">
             <!--             <intent-filter>-->
@@ -55,11 +63,11 @@
             <!--             </intent-filter>-->
         </activity>
         <activity android:name=".activity.ForgotPasswordActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity android:name=".activity.RegisterActivity">
 <!--            <intent-filter>-->
@@ -69,11 +77,11 @@
 <!--            </intent-filter>-->
         </activity>
         <activity android:name=".activity.LoginActivity" >
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <meta-data
             android:name="preloaded_fonts"

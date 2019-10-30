@@ -1,8 +1,9 @@
 package com.myfirstapplication.pjtwoui.data.network
 
 
-import com.google.gson.JsonArray
 import com.google.gson.JsonObject
+import com.myfirstapplication.pjtwoui.data.mydataclass.Property
+import com.myfirstapplication.pjtwoui.data.mydataclass.PropertyList
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -42,12 +43,30 @@ interface UserApi {
     fun proList(
         @Query("userid") uID: String,
         @Query("usertype") uType: String
-        ) : Call<JsonArray>
+        ) : Call<PropertyList>
 
 
 
+    @GET("pro_mgt_add_pro.php")
+    fun addProperty(
+        @Query("address") address: String,
+        @Query("city") city: String,
+        @Query("state") state: String,
+        @Query("country") country: String,
+        @Query("pro_status") pro_status: String,
+        @Query("purchase_price") status: String,
+        @Query("mortage_info") mortage_info: String,
+        @Query("userid") uid: String,
+        @Query("usertype") uType: String,
+        @Query("latitude") latitude: String,
+        @Query("longitude") longitude: String
+    ) : Call<JsonObject>
 
 
+    @GET("remove-property.php")
+    fun removeProperty(
+        @Query("propertyid") propertyId: String
+    ) : Call<JsonObject>
 
 
 
@@ -60,10 +79,6 @@ interface UserApi {
 
 
         operator fun invoke(): UserApi{
-
-//            val gson = GsonBuilder()
-//                .setLenient()
-//                .create()
 
             return Retrofit.Builder()
                 .baseUrl(url)

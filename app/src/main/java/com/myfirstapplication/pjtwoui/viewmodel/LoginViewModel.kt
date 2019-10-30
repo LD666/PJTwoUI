@@ -1,11 +1,13 @@
 package com.myfirstapplication.pjtwoui.viewmodel
 
+import android.content.Context
 import android.util.Log
 import android.view.View
 import androidx.lifecycle.*
 import com.google.gson.JsonObject
 import com.myfirstapplication.pjtwoui.activity.LoginActivity
 import com.myfirstapplication.pjtwoui.data.repositories.UserRepositories
+import com.myfirstapplication.pjtwoui.myinterface.LandlordListInterface
 import com.myfirstapplication.pjtwoui.myinterface.LoginInterface
 
 class LoginViewModel: ViewModel() {
