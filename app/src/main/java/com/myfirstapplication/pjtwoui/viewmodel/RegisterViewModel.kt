@@ -90,12 +90,12 @@ class RegisterViewModel: ViewModel() {
                 }
             }
 
-            if(countA > 1 || countD > 1){
-                isFalse = 1
-                registerInterface?.onEmailWrong()
-            }else{
-                isFalse = 0
-            }
+//            if(countA > 1 || countD > 1){
+//                isFalse = 1
+//                registerInterface?.onEmailWrong()
+//            }else{
+//                isFalse = 0
+//            }
 
         }
 

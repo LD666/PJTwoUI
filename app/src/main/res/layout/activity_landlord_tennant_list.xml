@@ -1,22 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activity.LandlordActivity">
 
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/landlord_bottom_nva"
-        android:background="@color/top_color"
-        app:itemIconTint="@color/text_color"
-        app:itemTextColor="@color/text_color"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/menu_landlord_tenants_list">
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        android:layout_height="match_parent"
+        tools:context=".activity.LoginActivity"
+        android:orientation="vertical"
+    android:id="@+id/rep_this_id">
 
-</RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@color/top_color"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/add_ten_back"
+                style="@style/toolBarsImg"/>
+
+
+            <TextView
+                style="@style/toolBarText"
+                android:text="@string/property_list"
+                android:layout_width="250dp"
+                android:layout_height="90dp"
+                android:textSize="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="15dp"
+                app:fontFamily="@font/stalinist_one">
+            </TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:background="@color/top_color">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@color/background_color">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/add_ten_pl_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+

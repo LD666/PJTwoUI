@@ -14,13 +14,16 @@ import androidx.lifecycle.ViewModelProviders
 import com.google.gson.JsonObject
 import com.myfirstapplication.pjtwoui.R
 import com.myfirstapplication.pjtwoui.activity.LandlordActivity
-import com.myfirstapplication.pjtwoui.activity.TennantActivity
 import com.myfirstapplication.pjtwoui.databinding.FragmentLandlordAddBinding
 import com.myfirstapplication.pjtwoui.myinterface.AddProInterface
 import com.myfirstapplication.pjtwoui.viewmodel.AddPropertyViewModel
 import kotlinx.android.synthetic.main.fragment_landlord_add.view.*
 
 class LandlordAddFragment: Fragment(), AddProInterface {
+    override fun onNull() {
+        Toast.makeText(this.context, "Address Can't be Empty", Toast.LENGTH_SHORT).show()
+    }
+
     override fun onNotAnAdd() {
         Toast.makeText(this.context, "Not a valid Address", Toast.LENGTH_SHORT).show()
     }
@@ -61,6 +64,7 @@ class LandlordAddFragment: Fragment(), AddProInterface {
         addBinding.addPropertyViewModel = addVm
 
         addVm.addProInterface = this
+
 
         addBinding.root.add_property_back.setOnClickListener(View.OnClickListener {
 

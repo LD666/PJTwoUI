@@ -1,5 +1,10 @@
 package com.myfirstapplication.pjtwoui.activity
 
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -26,11 +31,34 @@ class ForgotPasswordActivity : AppCompatActivity(), ForgotPasswordInterface {
             Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
 
 
+            if(msg != "Email is not register"){
+                var channelName = NotificationChannel("channelID", "myChannelName", NotificationManager.IMPORTANCE_DEFAULT)
+                channelName.description = "myDescription"
+                var notificationManger = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+                notificationManger.createNotificationChannel(channelName)
+
+
+                var notificationBuilder = Notification.Builder(this@ForgotPasswordActivity, channelName.id)
+
+                notificationBuilder.setChannelId(channelName.id)
+
+                notificationBuilder.setContentTitle("Your password reminder")
+                var pass = it.get("userpassword").asString
+                notificationBuilder.setContentText("your password is: $pass")
+
+                notificationBuilder.setSmallIcon(R.drawable.ic_notifications_active_black_24dp)
+
+                notificationBuilder.setAutoCancel(true)
+
+                notificationManger.notify(1, notificationBuilder.build())
+            }
+
+
             try {
                 var pass = it.get("userpassword").asString
                 text_view_show_password.setText(pass)
             }catch (e: IllegalStateException){
-                text_view_show_password.setText("Email Unfind")
+                text_view_show_password.setText("Email is not Valid")
             }
 
         })

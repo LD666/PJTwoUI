@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".activity.LandlordActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,18 +14,13 @@
         android:orientation="horizontal"
         android:padding="10dp">
 
-        <ImageView
-            android:id="@+id/remove_back"
-            style="@style/toolBarsImg"
-            android:layout_width="38dp" />
-
         <TextView
             android:layout_height="90dp"
             android:layout_marginTop="0dp"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="90dp"
             style="@style/toolBarText"
             android:textSize="20dp"
-            android:text="@string/tenant_List"
+            android:text="@string/list_t"
             app:fontFamily="@font/stalinist_one">
         </TextView>
 
@@ -42,7 +38,7 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/landlord_list_recycler"
+            android:id="@+id/tenant_list_recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

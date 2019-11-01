@@ -6,7 +6,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
+import com.myfirstapplication.pjtwoui.data.mydataclass.GetAllProForTenants
 import com.myfirstapplication.pjtwoui.data.mydataclass.PropertyList
+import com.myfirstapplication.pjtwoui.data.mydataclass.TenantsList
+import com.myfirstapplication.pjtwoui.data.mydataclass.mysharedpreferences.GetAllProForTenantsList
 import com.myfirstapplication.pjtwoui.data.mydataclass.mysharedpreferences.MyShared
 import com.myfirstapplication.pjtwoui.data.network.UserApi
 import okhttp3.ResponseBody
@@ -50,9 +53,10 @@ class UserRepositories {
     }
 
 
-    fun userLogin(email: String, password: String): LiveData<JsonObject>{
+    fun userLogin(email: String, password: String): LiveData<String>{
 
-        val loginResponse = MutableLiveData<JsonObject>()
+//        val loginResponse = MutableLiveData<JsonObject>()
+        var loginResponseStr = MutableLiveData<String>()
 
         var str: ArrayList<String> = ArrayList()
 
@@ -66,25 +70,32 @@ class UserRepositories {
 
                 override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
 
-                    loginResponse.value = response.body()
-                    var userID = loginResponse.value?.get("userid")?.asString
-                    var type = loginResponse.value?.get("usertype")?.asString
+                    //loginResponseStr.value = response.body()
+                    var userID = response.body()?.get("userid")?.asString
+                    var type = response.body()?.get("usertype")?.asString
+                    loginResponseStr.value = response.body()?.get("usertype")?.asString
+                    var email = response.body()?.get("useremail")?.asString
+
 
                     var userInfo = MyApplication.context.getSharedPreferences("saveUserInfo", Context.MODE_PRIVATE)
                     var editor = userInfo.edit()
 
                     editor.putString("uid", userID)
                     editor.putString("utype", type)
+                    editor.putString("uemail", email)
                     editor.commit()
 
-//                    Log.i("uinfo", userID.toString())
-//                    Log.i("uinfo", type.toString())
+                    Log.i("uinfo", userID.toString())
+                    Log.i("uinfo", type.toString())
+                    Log.i("uinfo", email.toString())
+
+                    loginResponseStr.value = type
 
                 }
 
             })
 
-        return loginResponse
+        return loginResponseStr
 
     }
 
@@ -137,7 +148,7 @@ class UserRepositories {
             override fun onResponse(call: Call<PropertyList>, response: Response<PropertyList>) {
                 listResponse.value = response.body()
 
-//                Log.i("www", listResponse.value.toString())
+//                Log.i("www123", listResponse.value.toString())
 
             }
 
@@ -197,12 +208,103 @@ class UserRepositories {
 
 
             override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
-
+                removeProResponse.value = response.body()
             }
 
         })
 
         return removeProResponse
+    }
+
+    fun tenantList(): LiveData<TenantsList>{
+
+        var tenantListResponse = MutableLiveData<TenantsList>()
+
+        var userInfo = MyApplication.context.getSharedPreferences("saveUserInfo", Context.MODE_PRIVATE)
+        var userID = userInfo.getString("uid", null)
+
+        UserApi().tenantList(userID!!).enqueue(object: Callback<TenantsList>{
+
+            override fun onFailure(call: Call<TenantsList>, t: Throwable) {
+
+            }
+
+
+            override fun onResponse(call: Call<TenantsList>, response: Response<TenantsList>) {
+                tenantListResponse.value = response.body()
+                Log.i("val",  tenantListResponse.value.toString())
+            }
+
+        })
+
+        return tenantListResponse
+    }
+
+
+    fun addTen(tName: String, tEmail: String, tAddress: String, tMobile: String): LiveData<ResponseBody>{
+
+        var addTenResponse = MutableLiveData<ResponseBody>()
+
+        var userInfo = MyApplication.context.getSharedPreferences("saveUserInfo", Context.MODE_PRIVATE)
+        var userID = userInfo.getString("uid", null)
+
+        var saveProId = MyApplication.context.getSharedPreferences("theProID", Context.MODE_PRIVATE)
+        var proId = saveProId.getString("saveID", null)
+
+        UserApi().addTenant(tName, tEmail, tAddress, tMobile, proId!!, userID!!).enqueue(object: Callback<ResponseBody>{
+
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+
+            }
+
+
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+
+                Log.i("showIT", "name " + tName)
+                Log.i("showIT","email " +  tEmail)
+                Log.i("showIT", "address " + tAddress)
+                Log.i("showIT", "mobile " +tMobile)
+                Log.i("showIT", "ProID " + proId)
+                Log.i("showIT", "userID " +userID)
+
+
+
+                Log.i("showCode", response.code().toString())
+
+                if(response.isSuccessful){
+                    addTenResponse.value = response.body()
+                    response.code()
+                    Log.i("showCode", "isSuccess")
+                }
+            }
+        })
+
+        return addTenResponse
+
+    }
+
+
+    fun getAllPro():LiveData<GetAllProForTenantsList>{
+
+        var getAllProResponse = MutableLiveData<GetAllProForTenantsList>()
+
+        UserApi().getProForTen().enqueue(object: Callback<GetAllProForTenantsList>{
+
+            override fun onResponse(
+                call: Call<GetAllProForTenantsList>,
+                response: Response<GetAllProForTenantsList>
+            ) {
+                getAllProResponse.value = response.body()
+            }
+
+
+            override fun onFailure(call: Call<GetAllProForTenantsList>, t: Throwable) {
+
+            }
+        })
+
+        return getAllProResponse
     }
 
 

@@ -3,6 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/item_all_Pro"
+        android:icon="@drawable/ic_account_balance_black_24dp"
+        android:title="Property" />
+    <item
         android:id="@+id/item_ten_map"
         android:icon="@drawable/ic_map_black_24dp"
         android:title="map" />

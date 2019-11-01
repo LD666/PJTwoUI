@@ -32,7 +32,7 @@ class RegisterActivity : AppCompatActivity(), RegisterInterface {
     }
 
     override fun onFalse() {
-        Toast.makeText(this, "Register false", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Register False Email not Valid", Toast.LENGTH_SHORT).show()
     }
 
 
@@ -50,6 +50,8 @@ class RegisterActivity : AppCompatActivity(), RegisterInterface {
         binding.registerdata = viewModel
 
         viewModel.registerInterface = this
+
+
 
         signin_back.setOnClickListener(View.OnClickListener {
 

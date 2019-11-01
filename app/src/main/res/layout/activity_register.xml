@@ -31,13 +31,13 @@
 
             <ImageView
                 android:id="@+id/signin_back"
-                style="@style/toolBarsImg"
-                android:layout_width="wrap_content" />
+                style="@style/toolBarsImg" />
 
 
             <TextView
                 style="@style/toolBarText"
-                android:text="@string/signin">
+                android:text="@string/signin"
+                android:layout_marginBottom="15dp">
             </TextView>
 
         </LinearLayout>
@@ -62,6 +62,7 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edit_text_MainEmail"
+                        android:textColor="@color/top_color"
                         android:hint="Email"
                         android:inputType="text"
                         android:text="@={registerdata.email}"
@@ -77,6 +78,7 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edit_text_landEmail"
+                        android:textColor="@color/top_color"
                         android:hint="Landlord Email"
                         android:inputType="text"
                         android:text="@={registerdata.landlordEmail}"
@@ -93,6 +95,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edit_text_regPassword"
                         android:hint="Password"
+                        android:textColor="@color/top_color"
                         android:inputType="textPassword"
                         android:text="@={registerdata.password}"
                         style="@style/signUpInEditTextStyle">
@@ -145,7 +148,7 @@
 <!--                        <com.google.android.material.button.MaterialButton-->
 <!--                            app:cornerRadius="20dp"-->
 <!--                            android:id="@+id/button_register_google"-->
-<!--                            android:text="@string/register"-->
+<!--                            android:text="@string/register_ag"-->
 <!--                            style="@style/button"-->
 <!--                            android:layout_marginTop="5dp">-->
 <!--                        </com.google.android.material.button.MaterialButton>-->

@@ -17,7 +17,7 @@ class LoginViewModel: ViewModel() {
 
     var loginInterface: LoginInterface? = null
 
-    var loginResponse: LiveData<JsonObject>? = null
+    var loginResponse: LiveData<String>? = null
 
     fun onLogin(view: View){
 
@@ -28,7 +28,7 @@ class LoginViewModel: ViewModel() {
             loginResponse = UserRepositories().userLogin(logEmail!!, logPassword!!)
             loginInterface?.onSuccess(loginResponse!!)
 
-            loginResponse!!.value?.get("msg").toString()
+//            loginResponse!!.value?.get("msg").toString()
 
 //            Log.i("asa", loginResponse!!.value?.get("msg").toString())
 

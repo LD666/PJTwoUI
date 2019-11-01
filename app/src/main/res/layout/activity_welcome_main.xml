@@ -51,8 +51,18 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.button.MaterialButton
+                    android:visibility="gone"
                     android:id="@+id/button_to_register"
                     android:text="@string/register"
+                    app:cornerRadius="20dp"
+                    style="@style/button"
+                    android:layout_marginTop="0dp">
+                </com.google.android.material.button.MaterialButton>
+
+                <com.google.android.material.button.MaterialButton
+                    android:visibility="gone"
+                    android:id="@+id/button_to_agree"
+                    android:text="@string/register_ag"
                     app:cornerRadius="20dp"
                     style="@style/button"
                     android:layout_marginTop="0dp">

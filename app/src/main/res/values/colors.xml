@@ -8,6 +8,8 @@
 
     <color name="text_color">#F2F4F7</color>
 
+    <color name="back_color">#125CCC</color>
+
     <color name="background_color">#F8FCFB</color>
 
 </resources>

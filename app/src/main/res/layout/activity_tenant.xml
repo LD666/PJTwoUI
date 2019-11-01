@@ -5,12 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.LandlordActivity">
+    tools:context=".activity.LandlordActivity"
+    android:id="@+id/ten_main">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/landlord_bottom_nva"
+        android:id="@+id/tenants_bottom_nva"
         android:background="@color/top_color"
         app:itemIconTint="@color/text_color"
         app:itemTextColor="@color/text_color"

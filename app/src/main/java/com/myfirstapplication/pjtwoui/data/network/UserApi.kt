@@ -2,8 +2,10 @@ package com.myfirstapplication.pjtwoui.data.network
 
 
 import com.google.gson.JsonObject
-import com.myfirstapplication.pjtwoui.data.mydataclass.Property
+
 import com.myfirstapplication.pjtwoui.data.mydataclass.PropertyList
+import com.myfirstapplication.pjtwoui.data.mydataclass.TenantsList
+import com.myfirstapplication.pjtwoui.data.mydataclass.mysharedpreferences.GetAllProForTenantsList
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -67,6 +69,27 @@ interface UserApi {
     fun removeProperty(
         @Query("propertyid") propertyId: String
     ) : Call<JsonObject>
+
+
+    @GET("pro_mgt_tenent_details.php")
+    fun tenantList(
+        @Query("landlordid") landlordId: String
+    ) : Call<TenantsList>
+
+
+    @GET("pro_mgt_add_tenants.php")
+    fun addTenant(
+        @Query("name") tName: String,
+        @Query("email") tEmail: String,
+        @Query("address") tAddress: String,
+        @Query("mobile") tMobile: String,
+        @Query("propertyid") propertyid: String,
+        @Query("landlordid") landlordid: String
+    ) : Call<ResponseBody>
+
+
+    @GET("pro_mgt_property_all.php")
+    fun getProForTen() : Call<GetAllProForTenantsList>
 
 
 

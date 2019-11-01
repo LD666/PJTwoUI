@@ -5,7 +5,7 @@ import com.google.gson.JsonObject
 
 interface LoginInterface {
 
-    fun onSuccess(loginResponse: LiveData<JsonObject>)
+    fun onSuccess(loginResponse: LiveData<String>)
 
     fun onFalse()
 

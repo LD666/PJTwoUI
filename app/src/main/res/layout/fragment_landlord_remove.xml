@@ -15,8 +15,7 @@
 
         <ImageView
             android:id="@+id/remove_property_back"
-            style="@style/toolBarsImg"
-            android:layout_width="38dp" />
+            style="@style/toolBarsImg" />
 
         <TextView
             android:layout_height="90dp"
@@ -44,7 +43,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/landlord_remove_list_recycler"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="521dp" />
     </LinearLayout>
 
 

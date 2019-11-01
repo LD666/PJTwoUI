@@ -33,6 +33,7 @@
             <TextView
                 style="@style/toolBarText"
                 android:text="@string/longin"
+                android:layout_marginBottom="15dp"
                 app:fontFamily="@font/stalinist_one"></TextView>
 
         </LinearLayout>
@@ -61,6 +62,9 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:hint="@string/email"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textColor="@color/top_color"
                         android:text="@={loginViewModel.logEmail}"
                         style="@style/signUpInEditTextStyle">
                     </com.google.android.material.textfield.TextInputEditText>
@@ -75,6 +79,9 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:hint="@string/password"
+                        android:maxLines="1"
+                        android:inputType="textPassword"
+                        android:textColor="@color/top_color"
                         android:text="@={loginViewModel.logPassword}"
                         style="@style/signUpInEditTextStyle">
                     </com.google.android.material.textfield.TextInputEditText>

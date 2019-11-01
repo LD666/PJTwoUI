@@ -8,7 +8,7 @@ import com.myfirstapplication.pjtwoui.data.repositories.UserRepositories
 class LandlordViewModel: ViewModel() {
 
 
-    fun list() : LiveData<PropertyList>{
+    fun list(): LiveData<PropertyList>{
         return UserRepositories().list()
     }
 

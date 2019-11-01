@@ -16,18 +16,17 @@
         android:orientation="horizontal"
         android:padding="10dp">
 
-        <ImageView
-            android:id="@+id/login_back"
-            style="@style/toolBarsImg"/>
 
 
         <TextView
             android:layout_marginTop="0dp"
             style="@style/toolBarText"
             android:textSize="30dp"
+            android:layout_marginLeft="85dp"
             android:layout_height="90dp"
             android:text="@string/tenant_info"
-            app:fontFamily="@font/stalinist_one"></TextView>
+            app:fontFamily="@font/stalinist_one">
+        </TextView>
 
     </LinearLayout>
 
@@ -53,6 +52,10 @@
                 tools:srcCompat="@drawable/tt" />
 
             <TextView
+                android:id="@+id/ten_f"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/top_color"
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp">
@@ -60,6 +63,10 @@
 
 
             <TextView
+                android:id="@+id/ten_sec"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/top_color"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp">
@@ -67,10 +74,12 @@
 
 
             <com.google.android.material.button.MaterialButton
-                app:cornerRadius="20dp"
+                android:id="@+id/ten_s_out"
+                style="@style/button"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="60dp"
                 android:text="@string/sign_out"
-                style="@style/button">
+                app:cornerRadius="20dp">
             </com.google.android.material.button.MaterialButton>
 
 

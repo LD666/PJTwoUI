@@ -9,4 +9,6 @@ interface AddProInterface {
 
     fun onNotAnAdd()
 
+    fun onNull()
+
 }

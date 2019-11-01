@@ -15,8 +15,7 @@
 
         <ImageView
             android:id="@+id/landlord_list_back"
-            style="@style/toolBarsImg"
-            android:layout_width="38dp" />
+            style="@style/toolBarsImg" />
 
         <TextView
             android:layout_height="90dp"

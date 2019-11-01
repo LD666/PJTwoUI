@@ -9,4 +9,6 @@ data class Property (@SerializedName("id") var id: String,
                      @SerializedName("propertycountry") var propertycountry: String,
                      @SerializedName("propertystatus") var propertystatus: String,
                      @SerializedName("propertypurchaseprice") var propertypurchaseprice: String,
-                     @SerializedName("propertymortageinfo") var propertymortageinfo: String)
+                     @SerializedName("propertymortageinfo") var propertymortageinfo: String,
+                     @SerializedName("propertylatitude") var propertylatitude: String,
+                     @SerializedName("propertylongitude") var propertylongitude: String)
