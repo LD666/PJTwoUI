@@ -1,25 +1,21 @@
 package com.myfirstapplication.pjtwoui.recycleradapter
 
 import android.content.Context
-import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.myfirstapplication.pjtwoui.R
 import com.myfirstapplication.pjtwoui.activity.LandlordActivity
-import com.myfirstapplication.pjtwoui.activity.LandlordTenantListActivity
 import com.myfirstapplication.pjtwoui.data.mydataclass.FakeImage
 import com.myfirstapplication.pjtwoui.data.mydataclass.Property
 import com.myfirstapplication.pjtwoui.data.repositories.MyApplication
 import com.myfirstapplication.pjtwoui.fragments.AddTenantFragment
 import com.myfirstapplication.pjtwoui.myinterface.SharedToInterface
 import kotlinx.android.synthetic.main.landlord_property_list_text.view.*
-import kotlinx.android.synthetic.main.landlord_property_list_text.view.imageView3
-import kotlinx.android.synthetic.main.tenants_list_text.view.*
+import kotlinx.android.synthetic.main.landlord_property_list_text.view.imageView_pro
 
 
 class PropertyListHandler(view: View): RecyclerView.ViewHolder(view){
@@ -28,7 +24,7 @@ class PropertyListHandler(view: View): RecyclerView.ViewHolder(view){
     var city = view.text_view_property_city
     var state = view.text_view_property_state
     var country = view.text_view_property_country
-    var img = view.imageView3
+    var img = view.imageView_pro
 
     var but = view.shared
 
@@ -55,7 +51,7 @@ class PropertyListAdapter(var items: List<Property>, var context: Context): Recy
         holder.state.text = "State: " + items[position].propertystate
         holder.country.text = "Country: " + items[position].propertycountry
 
-        holder.but.visibility = View.VISIBLE
+        holder.but.visibility = View.GONE
 
         this.context?.let { Glide.with(it).load(myImg[position%myImg.size]).into(holder.img) }
 

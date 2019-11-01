@@ -62,6 +62,13 @@ class LoginActivity : AppCompatActivity(), LoginInterface {
 
         viewModel.loginInterface = this
 
+        button_Reg.setOnClickListener(View.OnClickListener {
+
+            var myIntent = Intent(this, RegisterActivity::class.java)
+            startActivity(myIntent)
+
+        })
+
         button_login_goto_forgot.setOnClickListener(View.OnClickListener {
 
             var myIntent = Intent(this, ForgotPasswordActivity::class.java)
@@ -69,12 +76,12 @@ class LoginActivity : AppCompatActivity(), LoginInterface {
 
         })
 
-        login_back.setOnClickListener(View.OnClickListener {
-
-            var myIntent = Intent(this, WelcomeMainActivity::class.java)
-            startActivity(myIntent)
-
-        })
+//        login_back.setOnClickListener(View.OnClickListener {
+//
+//            var myIntent = Intent(this, WelcomeMainActivity::class.java)
+//            startActivity(myIntent)
+//
+//        })
 
     }
 

@@ -2,7 +2,6 @@ package com.myfirstapplication.pjtwoui.recycleradapter
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +19,7 @@ class RemovePropertyListHandler(view: View): RecyclerView.ViewHolder(view){
     var state = view.text_view_property_state
     var country = view.text_view_property_country
 
-    var img = view.imageView3
+    var img = view.imageView_pro
 
 }
 

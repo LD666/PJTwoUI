@@ -15,9 +15,9 @@
 
     <string name="password">Password</string>
 
-    <string name="forgot">Forgot</string>
+    <string name="forgot">Forgot Password</string>
 
-    <string name="shared">Shared</string>
+    <string name="shared">Share</string>
 
     <string name="list">Property</string>
 
@@ -29,7 +29,7 @@
 
     <string name="forgot_two">Here is your password</string>
 
-    <string name="property_list"> Property List</string>
+    <string name="property_list"> Property</string>
 
     <string name="all_list">Tenant</string>
 
@@ -37,11 +37,13 @@
 
     <string name="remove">Property Remove</string>
 
+    <string name="pro_di">Property details</string>
+
     <string name="remove_p">Remove</string>
 
-    <string name="property_remove"> Property Remove</string>
+    <string name="property_remove">Remove Property</string>
 
-    <string name="tenant_add"> Tenant Add</string>
+    <string name="tenant_add">Add Tenant</string>
 
     <string name="tenant_List"> Tenant List</string>
 

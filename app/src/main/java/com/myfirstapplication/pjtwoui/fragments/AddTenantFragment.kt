@@ -27,7 +27,11 @@ class AddTenantFragment: Fragment(), AddTenInterface {
 
             var msg = it.toString()
 
-            Toast.makeText(this.context, msg, Toast.LENGTH_SHORT).show()
+            if(msg != null){
+                Toast.makeText(this.context, "Add tenant Success", Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(this.context, "Add tenant FALSE", Toast.LENGTH_SHORT).show()
+            }
         })
     }
 

@@ -5,7 +5,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
+    android:layout_height="245dp"
     android:background="@color/back_color">
 
     <androidx.cardview.widget.CardView
@@ -22,7 +22,7 @@
 
 
             <TextView
-                android:id="@+id/text_view_property_country"
+                android:id="@+id/text_view_pro_cn"
                 android:layout_width="133dp"
                 android:textColor="@color/top_color"
                 android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
                 android:textSize="20dp"
                 android:gravity="left"
                 android:textColor="@color/top_color"
-                android:id="@+id/text_view_property_state"
+                android:id="@+id/text_view_pro_st"
                 android:layout_width="202dp"
                 android:layout_height="24dp"
                 android:layout_alignParentTop="true"
@@ -61,7 +61,7 @@
                 android:textSize="20dp"
                 android:gravity="left"
                 android:textColor="@color/top_color"
-                android:id="@+id/text_view_property_city"
+                android:id="@+id/text_view_pro_ci"
                 android:layout_width="200dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
@@ -76,22 +76,22 @@
                 android:layout_toRightOf="@+id/imageView_pro" />
 
             <ImageView
-                card_view:srcCompat="@drawable/bl"
                 android:id="@+id/imageView_pro"
-                android:layout_width="171dp"
-                android:layout_height="222dp"
+                android:layout_width="169dp"
+                android:layout_height="213dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="7dp"
                 android:layout_marginLeft="7dp"
-                android:layout_marginTop="5dp" />
+                android:layout_marginTop="5dp"
+                card_view:srcCompat="@drawable/bl" />
 
             <TextView
                 android:textSize="20dp"
                 android:gravity="left"
                 android:textColor="@color/top_color"
-                android:id="@+id/text_view_property_address"
+                android:id="@+id/text_view_pro_add"
                 android:layout_width="200dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
@@ -106,14 +106,15 @@
                 android:layout_toRightOf="@+id/imageView_pro" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/shared"
+                android:id="@+id/pro_shared"
                 android:visibility="gone"
                 style="@style/button"
-                android:layout_below="@+id/text_view_property_country"
+                android:layout_below="@+id/text_view_pro_cn"
                 android:layout_marginLeft="190dp"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="7dp"
                 android:text="@string/shared"
-                app:cornerRadius="20dp"></com.google.android.material.button.MaterialButton>
+                app:cornerRadius="20dp">
+            </com.google.android.material.button.MaterialButton>
 
 
         </RelativeLayout>
@@ -125,37 +126,37 @@
 </LinearLayout>
 
 
-<!--<TextView-->
-<!--android:id="@+id/text_view_property_address"-->
-<!--style="@style/property_list">-->
-<!--</TextView>-->
+    <!--<TextView-->
+    <!--android:id="@+id/text_view_property_address"-->
+    <!--style="@style/property_list">-->
+    <!--</TextView>-->
 
-<!--<TextView-->
-<!--android:id="@+id/text_view_property_city"-->
-<!--style="@style/property_list">-->
-<!--</TextView>-->
+    <!--<TextView-->
+    <!--android:id="@+id/text_view_property_city"-->
+    <!--style="@style/property_list">-->
+    <!--</TextView>-->
 
-<!--<TextView-->
-<!--android:id="@+id/text_view_property_state"-->
-<!--style="@style/property_list">-->
-<!--</TextView>-->
+    <!--<TextView-->
+    <!--android:id="@+id/text_view_property_state"-->
+    <!--style="@style/property_list">-->
+    <!--</TextView>-->
 
-<!--<TextView-->
-<!--android:id="@+id/text_view_property_country"-->
-<!--style="@style/property_list">-->
-<!--</TextView>-->
+    <!--<TextView-->
+    <!--android:id="@+id/text_view_property_country"-->
+    <!--style="@style/property_list">-->
+    <!--</TextView>-->
 
-<!--<TextView-->
-<!--android:id="@+id/text_view_property_status"-->
-<!--style="@style/property_list">-->
-<!--</TextView>-->
+    <!--<TextView-->
+    <!--android:id="@+id/text_view_property_status"-->
+    <!--style="@style/property_list">-->
+    <!--</TextView>-->
 
-<!--<TextView-->
-<!--android:id="@+id/text_view_property_purchaseprice"-->
-<!--style="@style/property_list">-->
-<!--</TextView>-->
+    <!--<TextView-->
+    <!--android:id="@+id/text_view_property_purchaseprice"-->
+    <!--style="@style/property_list">-->
+    <!--</TextView>-->
 
-<!--<TextView-->
-<!--android:id="@+id/text_view_property_mortageinfo"-->
-<!--style="@style/property_list">-->
-<!--</TextView>-->
+    <!--<TextView-->
+    <!--android:id="@+id/text_view_property_mortageinfo"-->
+    <!--style="@style/property_list">-->
+    <!--</TextView>-->

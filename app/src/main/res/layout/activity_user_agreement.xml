@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
+    android:windowSoftInputMode="adjustPan"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -21,14 +22,14 @@
             android:orientation="horizontal"
             android:padding="10dp">
 
-            <ImageView
-                android:id="@+id/agree_back"
-                style="@style/toolBarsImg" />
+<!--            <ImageView-->
+<!--                android:id="@+id/agree_back"-->
+<!--                style="@style/toolBarsImg" />-->
 
             <TextView
                 android:layout_height="90dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="90dp"
                 style="@style/toolBarText"
                 android:textSize="20dp"
                 android:text="@string/register_ag"
@@ -64,15 +65,22 @@
 
                 </androidx.core.widget.NestedScrollView>
 
-
-                <com.google.android.material.button.MaterialButton
-                    android:onClick="@{addTenViewModel::onClick}"
+                <CheckBox
+                    android:textColor="@color/top_color"
                     android:id="@+id/button_agr"
                     style="@style/button"
                     android:layout_marginTop="50dp"
                     android:text="@string/agr"
-                    app:cornerRadius="20dp">
-                </com.google.android.material.button.MaterialButton>
+                    app:cornerRadius="20dp" />
+
+
+<!--                                <com.google.android.material.button.MaterialButton-->
+<!--                    android:id="@+id/button_agr"-->
+<!--                    style="@style/button"-->
+<!--                    android:layout_marginTop="50dp"-->
+<!--                    android:text="@string/agr"-->
+<!--                    app:cornerRadius="20dp">-->
+<!--                </com.google.android.material.button.MaterialButton>-->
 
 
             </LinearLayout>

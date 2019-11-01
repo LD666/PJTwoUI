@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
+    android:windowSoftInputMode="adjustPan"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -128,6 +129,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/tenant" />
+
+                        <CheckBox
+                            android:id="@+id/checkBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Agreement" />
                     </RadioGroup>
 
                     <LinearLayout
@@ -137,9 +144,18 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:onClick="@{registerdata::onRegister}"
+                            android:visibility="gone"
                             app:cornerRadius="20dp"
                             android:id="@+id/button_register"
                             android:text="@string/register"
+                            style="@style/button"
+                            android:layout_marginTop="0dp">
+                        </com.google.android.material.button.MaterialButton>
+
+                        <com.google.android.material.button.MaterialButton
+                            app:cornerRadius="20dp"
+                            android:id="@+id/button_Agreemnt"
+                            android:text="Agreement"
                             style="@style/button"
                             android:layout_marginTop="0dp">
                         </com.google.android.material.button.MaterialButton>
@@ -157,10 +173,6 @@
 
                 </LinearLayout>
 
-
-                <ImageView
-                    android:layout_marginTop="10dp"
-                    style="@style/mainImg"/>
 
             </LinearLayout>
 

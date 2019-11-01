@@ -11,6 +11,7 @@ import com.myfirstapplication.pjtwoui.fragments.*
 import com.myfirstapplication.pjtwoui.myinterface.PassTenInfoInterface
 import com.myfirstapplication.pjtwoui.myinterface.SharedToInterface
 import kotlinx.android.synthetic.main.activity_landlord.*
+import kotlinx.android.synthetic.main.landlord_property_list_text.*
 
 class LandlordActivity : AppCompatActivity(), PassTenInfoInterface, SharedToInterface{
 
@@ -64,9 +65,11 @@ class LandlordActivity : AppCompatActivity(), PassTenInfoInterface, SharedToInte
 
         float_button_to_add.visibility = View.VISIBLE
 
-        var landlordFragment= LandlordFragment()
-        supportFragmentManager.beginTransaction().replace(R.id.landlord_main, landlordFragment).commit()
+//        var landlordFragment= LandlordFragment()
+//        supportFragmentManager.beginTransaction().replace(R.id.landlord_main, landlordFragment).commit()
 
+        var lanProListFragment = LanProListFragment()
+        supportFragmentManager.beginTransaction().replace(R.id.landlord_main, lanProListFragment).commit()
 
 
         var mySettingTask = findViewById<BottomNavigationView>(R.id.landlord_bottom_nva_landlord)
@@ -74,6 +77,16 @@ class LandlordActivity : AppCompatActivity(), PassTenInfoInterface, SharedToInte
         mySettingTask.setOnNavigationItemSelectedListener {item ->
 
             when (item.itemId) {
+
+                R.id.item_lan_pro ->  {
+
+                    supportFragmentManager.beginTransaction().replace(R.id.landlord_main, lanProListFragment).commit()
+
+                    float_button_to_add.visibility = View.VISIBLE
+                    float_button_to_add_ten.visibility = View.GONE
+
+                    true
+                }
 
 
                 R.id.item_add_ten ->  {
@@ -83,9 +96,8 @@ class LandlordActivity : AppCompatActivity(), PassTenInfoInterface, SharedToInte
 
                     var landlordFragment= LandlordFragment()
                     supportFragmentManager.beginTransaction().replace(R.id.landlord_main, landlordFragment).commit()
-                    float_button_to_add.visibility = View.VISIBLE
+                    float_button_to_add.visibility = View.GONE
                     float_button_to_add_ten.visibility = View.GONE
-
                     true
                 }
 

@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import com.myfirstapplication.pjtwoui.R
 import kotlinx.android.synthetic.main.activity_user_agreement.*
 
@@ -20,15 +21,17 @@ class UserAgreementActivity : AppCompatActivity() {
             var editor = agr.edit()
             editor.putString("isAgr", "true")
             editor.commit()
-            var myIntent = Intent(this, WelcomeMainActivity::class.java)
+            var myIntent = Intent(this, RegisterActivity::class.java)
             startActivity(myIntent)
         })
 
-        agree_back.setOnClickListener(View.OnClickListener {
 
-            var myIntent = Intent(this, WelcomeMainActivity::class.java)
-            startActivity(myIntent)
-        })
+
+//        agree_back.setOnClickListener(View.OnClickListener {
+//
+//            var myIntent = Intent(this, WelcomeMainActivity::class.java)
+//            startActivity(myIntent)
+//        })
 
     }
 }

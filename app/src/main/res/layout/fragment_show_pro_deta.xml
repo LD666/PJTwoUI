@@ -26,7 +26,7 @@
             android:padding="10dp">
 
             <ImageView
-                android:id="@+id/rm_property_back"
+                android:id="@+id/dt_property_back"
                 style="@style/toolBarsImg" />
 
             <TextView
@@ -35,7 +35,7 @@
                 android:layout_marginLeft="50dp"
                 style="@style/toolBarText"
                 android:textSize="20dp"
-                android:text="@string/remove"
+                android:text="@string/pro_di"
                 app:fontFamily="@font/stalinist_one">
             </TextView>
 
@@ -62,83 +62,81 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
+                <ImageView
+                    android:id="@+id/imageView_pd"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    app:srcCompat="@drawable/bl" />
+
+
                 <TextView
-                    android:id="@+id/edit_text_rm_id"
+                    android:id="@+id/edit_text_dt_address"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:textColor="@color/top_color"
-                    android:textSize="20dp"></TextView>
+                    android:textSize="20dp">
+                </TextView>
+
 
                 <TextView
-                    android:id="@+id/edit_text_rm_address"
+                    android:id="@+id/edit_text_dt_city"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:textColor="@color/top_color"
-                    android:textSize="20dp"></TextView>
+                    android:textSize="20dp">
+                </TextView>
 
 
                 <TextView
-                    android:id="@+id/edit_text_rm_city"
+                    android:id="@+id/edit_text_dt_state"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:textColor="@color/top_color"
-                    android:textSize="20dp"></TextView>
+                    android:textSize="20dp">
+                </TextView>
 
 
                 <TextView
-                    android:id="@+id/edit_text_rm_state"
+                    android:id="@+id/edit_text_dt_country"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:textColor="@color/top_color"
-                    android:textSize="20dp"></TextView>
+                    android:textSize="20dp">
+                </TextView>
 
 
                 <TextView
-                    android:id="@+id/edit_text_rm_country"
+                    android:id="@+id/edit_text_dt_status"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:textColor="@color/top_color"
-                    android:textSize="20dp"></TextView>
+                    android:textSize="20dp">
+                </TextView>
 
 
                 <TextView
-                    android:id="@+id/edit_text_rm_status"
+                    android:id="@+id/edit_text_dt_price"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:textColor="@color/top_color"
-                    android:textSize="20dp"></TextView>
+                    android:textSize="20dp">
+                </TextView>
 
 
                 <TextView
-                    android:id="@+id/edit_text_rm_price"
+                    android:id="@+id/edit_text_dt_mortage_info"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:textColor="@color/top_color"
-                    android:textSize="20dp"></TextView>
-
-
-                <TextView
-                    android:id="@+id/edit_text_rm_mortage_info"
-                    style="@style/signUpInEditTextStyle"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:textColor="@color/top_color"
-                    android:textSize="20dp"></TextView>
-
-
-                <com.google.android.material.button.MaterialButton
-                    style="@style/button"
-                    android:layout_marginTop="40dp"
-                    android:onClick="@{removePropertyViewModel::onRemovePressed}"
-                    android:text="@string/remove_p"
-                    app:cornerRadius="20dp"></com.google.android.material.button.MaterialButton>
+                    android:textSize="20dp">
+                </TextView>
 
             </LinearLayout>
 

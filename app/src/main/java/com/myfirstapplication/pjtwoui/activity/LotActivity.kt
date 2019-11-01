@@ -14,5 +14,8 @@ class LotActivity : AppCompatActivity() {
 //        var addTenantFragment = AddTenantFragment()
 //        supportFragmentManager.beginTransaction().add(R.id.WTF, addTenantFragment).commit()
 
+
+
+
     }
 }

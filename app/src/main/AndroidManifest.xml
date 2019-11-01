@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
+        android:windowSoftInputMode="adjustPan"
         android:name=".data.repositories.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -44,12 +45,6 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".activity.WelcomeMainActivity">
-             <intent-filter>
-             <action android:name="android.intent.action.MAIN" />
-
-
-             <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
         </activity>
         <activity android:name=".activity.LandlordTenantListActivity" />
         <activity android:name=".activity.AddRemoveActivity">
@@ -89,11 +84,11 @@
             <!-- </intent-filter> -->
         </activity>
         <activity android:name=".activity.LoginActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <meta-data

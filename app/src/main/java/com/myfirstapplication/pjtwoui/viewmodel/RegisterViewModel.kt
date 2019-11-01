@@ -64,7 +64,7 @@ class RegisterViewModel: ViewModel() {
                     break
                 }else{
                     Log.i("array", regEmail[i].toString())
-                    registerInterface?.onEmailWrong()
+//                    registerInterface?.onEmailWrong()
                     isFalse = 1
                 }
             }
@@ -76,7 +76,6 @@ class RegisterViewModel: ViewModel() {
                     break
                 }else{
                     Log.i("array", regEmail[i].toString())
-                    registerInterface?.onEmailWrong()
                     isFalse = 1
                 }
             }
@@ -86,7 +85,6 @@ class RegisterViewModel: ViewModel() {
                     countD++
                 }else if(regEmail[i].toString() == "@"){
                     countA++
-                    registerInterface?.onEmailWrong()
                 }
             }
 

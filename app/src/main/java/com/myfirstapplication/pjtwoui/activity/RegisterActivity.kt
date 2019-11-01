@@ -1,5 +1,6 @@
 package com.myfirstapplication.pjtwoui.activity
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,8 @@ import com.myfirstapplication.pjtwoui.databinding.ActivityRegisterBinding
 import com.myfirstapplication.pjtwoui.myinterface.RegisterInterface
 import com.myfirstapplication.pjtwoui.viewmodel.RegisterViewModel
 import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.activity_user_agreement.*
+import kotlinx.android.synthetic.main.activity_welcome_main.*
 
 class RegisterActivity : AppCompatActivity(), RegisterInterface {
     override fun onStarted() {
@@ -24,6 +27,17 @@ class RegisterActivity : AppCompatActivity(), RegisterInterface {
 //        Toast.makeText(this, "Register Success", Toast.LENGTH_SHORT).show()
         registerResponse.observe(this, Observer {
             Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+
+            if(it == "successfully registered"){
+                var myIntent = Intent(this, LoginActivity::class.java)
+                startActivity(myIntent)
+
+                var agr = getSharedPreferences("agr", Context.MODE_PRIVATE)
+                var editor = agr.edit()
+                editor.clear()
+
+            }
+
         })
     }
 
@@ -52,14 +66,33 @@ class RegisterActivity : AppCompatActivity(), RegisterInterface {
         viewModel.registerInterface = this
 
 
+        var agr = getSharedPreferences("agr", Context.MODE_PRIVATE)
+
+        if(agr.getString("isAgr", null) == null){
+            button_register.visibility = View.GONE
+            button_Agreemnt.visibility = View.VISIBLE
+        }else{
+            button_register.visibility = View.VISIBLE
+            button_Agreemnt.visibility = View.GONE
+        }
+
+
 
         signin_back.setOnClickListener(View.OnClickListener {
 
-            var myIntent = Intent(this, WelcomeMainActivity::class.java)
+            var myIntent = Intent(this, LoginActivity::class.java)
             startActivity(myIntent)
 
         })
 
+        checkBox.visibility = View.GONE
+
+        button_Agreemnt.setOnClickListener(View.OnClickListener {
+
+            var myIntent = Intent(this, UserAgreementActivity::class.java)
+            startActivity(myIntent)
+
+        })
 
     }
 }

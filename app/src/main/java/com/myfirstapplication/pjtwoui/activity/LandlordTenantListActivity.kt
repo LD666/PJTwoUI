@@ -61,7 +61,7 @@ class LandlordTenantListActivity : AppCompatActivity(), GoFragIntent {
 
 
 //        var mySettingTask = findViewById<BottomNavigationView>(R.id.landlord_tenants_bottom_nva)
-
+//
 //        mySettingTask.setOnNavigationItemSelectedListener {item ->
 //
 //            when (item.itemId) {
