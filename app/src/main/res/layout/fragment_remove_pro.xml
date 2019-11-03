@@ -34,9 +34,9 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="50dp"
                 style="@style/toolBarText"
-                android:textSize="20dp"
+                android:textSize="25dp"
                 android:text="@string/remove"
-                app:fontFamily="@font/stalinist_one">
+                app:fontFamily="@font/allerta">
             </TextView>
 
         </LinearLayout>
@@ -51,18 +51,19 @@
             android:layout_marginEnd="0dp"
             android:layout_marginRight="0dp"
             android:layout_marginBottom="0dp"
-            android:background="@color/top_color"
+            android:background="#6ec6ff"
             android:orientation="vertical"
             android:padding="30dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/text_color"
+                android:background="#F2F3F5"
                 android:orientation="vertical"
                 android:padding="20dp">
 
                 <TextView
+                    app:fontFamily="@font/allerta"
                     android:id="@+id/edit_text_rm_id"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
@@ -71,6 +72,7 @@
                     android:textSize="20dp"></TextView>
 
                 <TextView
+                    app:fontFamily="@font/allerta"
                     android:id="@+id/edit_text_rm_address"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
@@ -80,6 +82,7 @@
 
 
                 <TextView
+                    app:fontFamily="@font/allerta"
                     android:id="@+id/edit_text_rm_city"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
@@ -89,6 +92,7 @@
 
 
                 <TextView
+                    app:fontFamily="@font/allerta"
                     android:id="@+id/edit_text_rm_state"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
@@ -98,6 +102,7 @@
 
 
                 <TextView
+                    app:fontFamily="@font/allerta"
                     android:id="@+id/edit_text_rm_country"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
@@ -107,6 +112,7 @@
 
 
                 <TextView
+                    app:fontFamily="@font/allerta"
                     android:id="@+id/edit_text_rm_status"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
@@ -116,6 +122,7 @@
 
 
                 <TextView
+                    app:fontFamily="@font/allerta"
                     android:id="@+id/edit_text_rm_price"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
@@ -125,6 +132,7 @@
 
 
                 <TextView
+                    app:fontFamily="@font/allerta"
                     android:id="@+id/edit_text_rm_mortage_info"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
@@ -134,6 +142,7 @@
 
 
                 <com.google.android.material.button.MaterialButton
+                    app:fontFamily="@font/allerta"
                     style="@style/button"
                     android:layout_marginTop="40dp"
                     android:onClick="@{removePropertyViewModel::onRemovePressed}"

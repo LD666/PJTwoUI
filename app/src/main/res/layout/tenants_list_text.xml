@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="230dp"
-    android:background="@color/back_color">
+    android:background="#6ec6ff">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="155dp"
+                android:layout_marginTop="130dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_toEndOf="@+id/ten_img"
@@ -50,7 +50,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="110dp"
+                android:layout_marginTop="90dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_toEndOf="@+id/ten_img"
@@ -68,7 +68,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="8dp"
                 android:layout_toEndOf="@+id/ten_img"

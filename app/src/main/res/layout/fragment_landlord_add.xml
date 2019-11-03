@@ -34,9 +34,9 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="60dp"
                 style="@style/toolBarText"
-                android:textSize="20dp"
+                android:textSize="25dp"
                 android:text="@string/property_add"
-                app:fontFamily="@font/stalinist_one">
+                app:fontFamily="@font/allerta">
             </TextView>
 
         </LinearLayout>
@@ -50,7 +50,7 @@
             android:layout_marginEnd="0dp"
             android:layout_marginRight="0dp"
             android:layout_marginBottom="0dp"
-            android:background="@color/back_color"
+            android:background="#6ec6ff"
             android:orientation="vertical"
             android:padding="30dp">
 
@@ -67,6 +67,7 @@
                     android:layout_height="50dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        app:fontFamily="@font/allerta"
                         android:id="@+id/edit_text_add_address"
                         style="@style/signUpInEditTextStyle"
                         android:hint="Address"
@@ -80,6 +81,7 @@
                     android:layout_height="50dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        app:fontFamily="@font/allerta"
                         android:id="@+id/edit_text_add_city"
                         style="@style/signUpInEditTextStyle"
                         android:hint="City"
@@ -93,6 +95,7 @@
                     android:layout_height="50dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        app:fontFamily="@font/allerta"
                         android:id="@+id/edit_text_add_state"
                         style="@style/signUpInEditTextStyle"
                         android:hint="State"
@@ -106,6 +109,7 @@
                     android:layout_height="50dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        app:fontFamily="@font/allerta"
                         android:id="@+id/edit_text_add_country"
                         style="@style/signUpInEditTextStyle"
                         android:hint="Country"
@@ -119,6 +123,7 @@
                     android:layout_height="50dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        app:fontFamily="@font/allerta"
                         android:id="@+id/edit_text_add_status"
                         style="@style/signUpInEditTextStyle"
                         android:hint="Status"
@@ -133,6 +138,7 @@
                     android:layout_height="50dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        app:fontFamily="@font/allerta"
                         android:id="@+id/edit_text_add_price"
                         style="@style/signUpInEditTextStyle"
                         android:hint="Price"
@@ -146,6 +152,7 @@
                     android:layout_height="50dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        app:fontFamily="@font/allerta"
                         android:id="@+id/edit_text_add_mortage_info"
                         style="@style/signUpInEditTextStyle"
                         android:layout_height="39dp"
@@ -156,6 +163,7 @@
 
 
                 <com.google.android.material.button.MaterialButton
+                    app:fontFamily="@font/allerta"
                     style="@style/button"
                     android:layout_marginTop="30dp"
                     android:onClick="@{addPropertyViewModel::onProAdd}"

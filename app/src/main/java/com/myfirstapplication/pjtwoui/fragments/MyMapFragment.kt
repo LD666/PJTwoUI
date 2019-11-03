@@ -1,5 +1,6 @@
 package com.myfirstapplication.pjtwoui.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,12 +12,38 @@ import androidx.lifecycle.ViewModelProviders
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.myfirstapplication.pjtwoui.R
+import com.myfirstapplication.pjtwoui.data.mydataclass.Property
+import com.myfirstapplication.pjtwoui.data.repositories.MyApplication
 import com.myfirstapplication.pjtwoui.viewmodel.LandlordViewModel
 import kotlinx.android.synthetic.main.fragment_map.*
 
-class MyMapFragment: Fragment(), OnMapReadyCallback  {
+class MyMapFragment: Fragment(), OnMapReadyCallback {
+//    override fun onMarkerClick(p0: Marker?): Boolean {
+//
+//        var property = p0?.tag as Property
+//
+//        var savePro = MyApplication.context.getSharedPreferences("thePro", Context.MODE_PRIVATE)
+//        var editor = savePro.edit()
+//        editor.putString("theAd",  property.propertyaddress)
+//        editor.putString("theCi", property.propertycity)
+//        editor.putString("theSt", property.propertystate)
+//        editor.putString("theCn", property.propertycountry)
+//        editor.putString("theSta", property.propertystate)
+//        editor.putString("thePrz", property.propertypurchaseprice)
+//        editor.putString("theMor", showDataroperty.propertymortageinfo)
+//        editor.commit()
+//
+//        Log.i("showData", savePro.getString("theAd", null).toString())
+//
+//
+//        var onMapShowDitFragment = OnMapShowDitFragment()
+//        fragmentManager?.beginTransaction()?.replace(R.id.landlord_main, onMapShowDitFragment)?.commit()
+//
+//        return false
+//    }
 
     private lateinit var googleMap: GoogleMap
 
@@ -48,8 +75,34 @@ class MyMapFragment: Fragment(), OnMapReadyCallback  {
                    var lat = getRes.property[i].propertylatitude.toDouble()
                    var lon = getRes.property[i].propertylongitude.toDouble()
                    val sydney = LatLng(lat, lon)
-                   googleMap.addMarker(MarkerOptions().position(sydney).title(getRes.property[i].propertyaddress.toString()))
+
+                   var marker = googleMap.addMarker(MarkerOptions().position(sydney).title(getRes.property[i].propertyaddress.toString()))
+
+                   marker.tag = getRes.property[i]
+
+                   googleMap.setOnInfoWindowClickListener {
+                       Log.i("show", "clicked")
+                       var savePro = MyApplication.context.getSharedPreferences("thePro", Context.MODE_PRIVATE)
+                       var editor = savePro.edit()
+                       editor.putString("theAd",  getRes.property[i].propertyaddress)
+                       editor.putString("theCi", getRes.property[i].propertycity)
+                       editor.putString("theSt", getRes.property[i].propertystate)
+                       editor.putString("theCn", getRes.property[i].propertycountry)
+                       editor.putString("theSta", getRes.property[i].propertystate)
+                       editor.putString("thePrz", getRes.property[i].propertypurchaseprice)
+                       editor.putString("theMor", getRes.property[i].propertymortageinfo)
+                       editor.commit()
+
+                       Log.i("showData", savePro.getString("theAd", null).toString())
+
+
+                       var onMapShowDitFragment = OnMapShowDitFragment()
+                       fragmentManager?.beginTransaction()?.replace(R.id.landlord_main, onMapShowDitFragment)?.commit()
+                   }
+
                }
+
+
 
            })
 

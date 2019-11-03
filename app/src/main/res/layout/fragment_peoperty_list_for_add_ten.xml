@@ -19,13 +19,12 @@
             style="@style/toolBarsImg" />
 
         <TextView
+            app:fontFamily="@font/allerta"
             style="@style/toolBarText"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="40dp"
             android:layout_width="250dp"
-            android:textSize="30dp"
-            android:text="@string/list"
-            app:fontFamily="@font/stalinist_one">
+            android:text="@string/list">
         </TextView>
 
 

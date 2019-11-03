@@ -16,13 +16,12 @@
 
 
         <TextView
+            app:fontFamily="@font/allerta"
             android:layout_height="90dp"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="90dp"
             style="@style/toolBarText"
-            android:textSize="30dp"
-            android:text="@string/title_activity_maps"
-            app:fontFamily="@font/stalinist_one">
+            android:text="@string/title_activity_maps">
         </TextView>
 
     </LinearLayout>

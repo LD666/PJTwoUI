@@ -9,7 +9,7 @@
 
     <string name="register_ag">User Agreement</string>
 
-    <string name="longin">LogIn</string>
+    <string name="longin">Login</string>
 
     <string name="email">Email</string>
 
@@ -21,7 +21,7 @@
 
     <string name="list">Property</string>
 
-    <string name="list_t">Tenants List</string>
+    <string name="list_t">Tenants</string>
 
     <string name="signin">SingIn</string>
 
@@ -33,7 +33,7 @@
 
     <string name="all_list">Tenant</string>
 
-    <string name="property_add"> Property Add</string>
+    <string name="property_add">Add Property</string>
 
     <string name="remove">Property Remove</string>
 

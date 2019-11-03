@@ -36,7 +36,7 @@
                 android:text="@string/longin"
                 android:layout_marginLeft="90dp"
                 android:layout_marginBottom="15dp"
-                app:fontFamily="@font/stalinist_one"></TextView>
+                app:fontFamily="@font/allerta"></TextView>
 
         </LinearLayout>
 
@@ -46,7 +46,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="20dp"
-            android:background="@color/top_color">
+            android:background="#6ec6ff">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -64,6 +64,7 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:hint="@string/email"
+                        app:fontFamily="@font/allerta"
                         android:inputType="text"
                         android:maxLines="1"
                         android:textColor="@color/top_color"
@@ -81,6 +82,7 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:hint="@string/password"
+                        app:fontFamily="@font/allerta"
                         android:maxLines="1"
                         android:inputType="textPassword"
                         android:textColor="@color/top_color"
@@ -90,38 +92,39 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="90dp">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="90dp">-->
+
+<!--&lt;!&ndash;                    <com.google.android.material.button.MaterialButton&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:id="@+id/button_Reg"&ndash;&gt;-->
+<!--&lt;!&ndash;                        app:cornerRadius="25dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginLeft="80dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginTop="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:text="@string/register"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textSize="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        style="@style/button">&ndash;&gt;-->
+<!--&lt;!&ndash;                    </com.google.android.material.button.MaterialButton>&ndash;&gt;-->
 
 <!--                    <com.google.android.material.button.MaterialButton-->
-<!--                        android:layout_gravity="center"-->
-<!--                        android:id="@+id/button_Reg"-->
-<!--                        app:cornerRadius="25dp"-->
-<!--                        android:layout_marginLeft="80dp"-->
-<!--                        android:layout_marginTop="10dp"-->
-<!--                        android:text="@string/register"-->
+<!--                        android:id="@+id/button_logIn"-->
+<!--                        app:cornerRadius="20dp"-->
+<!--                        app:fontFamily="@font/allerta"-->
+<!--                        android:onClick="@{loginViewModel::onLogin}"-->
+<!--                        android:layout_marginTop="20dp"-->
+<!--                        android:text="@string/longin"-->
+<!--                        android:layout_marginLeft="90dp"-->
 <!--                        android:textSize="20dp"-->
 <!--                        style="@style/button">-->
 <!--                    </com.google.android.material.button.MaterialButton>-->
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/button_logIn"
-                        app:cornerRadius="20dp"
-                        android:onClick="@{loginViewModel::onLogin}"
-                        android:layout_marginTop="20dp"
-                        android:text="@string/longin"
-                        android:layout_marginLeft="90dp"
-                        android:textSize="20dp"
-                        style="@style/button">
-                    </com.google.android.material.button.MaterialButton>
-
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:orientation="horizontal">
+                    android:layout_height="230dp"
+                    android:orientation="vertical">
 
 <!--                    <com.google.android.material.button.MaterialButton-->
 <!--                        android:id="@+id/button_logIn"-->
@@ -133,23 +136,38 @@
 <!--                        style="@style/button">-->
 <!--                    </com.google.android.material.button.MaterialButton>-->
 
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_logIn"
+                        app:cornerRadius="20dp"
+                        app:fontFamily="@font/allerta"
+                        android:onClick="@{loginViewModel::onLogin}"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/longin"
+                        android:layout_marginRight="50dp"
+                        android:textSize="15dp"
+                        style="@style/button">
+                    </com.google.android.material.button.MaterialButton>
+
                                         <com.google.android.material.button.MaterialButton
                                             android:layout_gravity="center"
                                             android:id="@+id/button_Reg"
                                             app:cornerRadius="25dp"
                                             android:layout_marginTop="20dp"
                                             android:text="@string/register"
-                                            android:textSize="20dp"
+                                            android:textSize="15dp"
+                                            android:layout_marginRight="50dp"
+                                            app:fontFamily="@font/allerta"
                                             style="@style/button">
                                         </com.google.android.material.button.MaterialButton>
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/button_login_goto_forgot"
                         app:cornerRadius="20dp"
+                        app:fontFamily="@font/allerta"
                         android:layout_marginTop="20dp"
-                        android:textSize="12dp"
+                        android:textSize="11dp"
+                        android:layout_marginRight="50dp"
                         android:text="@string/forgot"
-                        android:layout_marginLeft="30dp"
                         style="@style/button">
                     </com.google.android.material.button.MaterialButton>
 

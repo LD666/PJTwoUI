@@ -48,10 +48,10 @@ class MyProAdapter(var item: List<Property>, var context: Context?): RecyclerVie
         holder.but.visibility = View.VISIBLE
 
 
-        holder.adr.text = "Name: " + item[position].propertyaddress
-        holder.ci.text = "Email: " + item[position].propertycity
-        holder.st.text = "Address: " + item[position].propertystate
-        holder.cn.text = "Tel: " + item[position].propertycountry
+        holder.adr.text = "Address: " + item[position].propertyaddress
+        holder.ci.text = "City: " + item[position].propertycity
+        holder.st.text = "state: " + item[position].propertystate
+        holder.cn.text = "Country: " + item[position].propertycountry
 
         this.context?.let { Glide.with(it).load(tenImg[position%tenImg.size]).into(holder.img) }
 

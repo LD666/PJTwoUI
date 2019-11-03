@@ -24,9 +24,8 @@
             android:layout_marginTop="0dp"
             android:layout_marginLeft="50dp"
             style="@style/toolBarText"
-            android:textSize="20dp"
             android:text="@string/all_list"
-            app:fontFamily="@font/stalinist_one">
+            app:fontFamily="@font/allerta">
         </TextView>
 
     </LinearLayout>
@@ -41,14 +40,14 @@
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:layout_marginBottom="0dp"
-        android:background="@color/top_color"
+        android:background="#6ec6ff"
         android:orientation="vertical"
         android:padding="30dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/text_color"
+            android:background="#F8F9FA"
             android:orientation="vertical"
             android:padding="20dp">
 
@@ -99,6 +98,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView_ten_name"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 
             <TextView
+                app:fontFamily="@font/allerta"
                 android:id="@+id/textView_ten_name"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
@@ -114,6 +114,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
             <TextView
+                app:fontFamily="@font/allerta"
                 android:id="@+id/textView_ten_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -129,6 +130,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView_ten_phone" />
 
             <TextView
+                app:fontFamily="@font/allerta"
                 android:id="@+id/textView_ten_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -142,6 +144,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView_ten_email" />
 
             <TextView
+                app:fontFamily="@font/allerta"
                 android:id="@+id/textView_ten_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

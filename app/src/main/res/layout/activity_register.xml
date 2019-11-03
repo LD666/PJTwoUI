@@ -36,6 +36,7 @@
 
 
             <TextView
+                app:fontFamily="@font/allerta"
                 style="@style/toolBarText"
                 android:text="@string/signin"
                 android:layout_marginBottom="15dp">
@@ -48,7 +49,8 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="20dp"
-            android:background="@color/top_color">
+            android:background="#6ec6ff"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -65,6 +67,7 @@
                         android:id="@+id/edit_text_MainEmail"
                         android:textColor="@color/top_color"
                         android:hint="Email"
+                        app:fontFamily="@font/allerta"
                         android:inputType="text"
                         android:text="@={registerdata.email}"
                         style="@style/signUpInEditTextStyle">
@@ -82,6 +85,7 @@
                         android:textColor="@color/top_color"
                         android:hint="Landlord Email"
                         android:inputType="text"
+                        app:fontFamily="@font/allerta"
                         android:text="@={registerdata.landlordEmail}"
                         style="@style/signUpInEditTextStyle">
                     </com.google.android.material.textfield.TextInputEditText>
@@ -96,6 +100,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edit_text_regPassword"
                         android:hint="Password"
+                        app:fontFamily="@font/allerta"
                         android:textColor="@color/top_color"
                         android:inputType="textPassword"
                         android:text="@={registerdata.password}"
@@ -116,6 +121,8 @@
                         android:layout_height="match_parent" >
 
                         <RadioButton
+                            app:fontFamily="@font/allerta"
+                            android:layout_marginLeft="40dp"
                             android:onClick="@{registerdata::isLandlord}"
                             android:layout_marginTop="15dp"
                             android:id="@+id/isLandlord"
@@ -124,6 +131,8 @@
                             android:text="@string/landlord" />
 
                         <RadioButton
+                            app:fontFamily="@font/allerta"
+                            android:layout_marginLeft="40dp"
                             android:onClick="@{registerdata::isTenant}"
                             android:id="@+id/isTenant"
                             android:layout_width="match_parent"
@@ -131,6 +140,8 @@
                             android:text="@string/tenant" />
 
                         <CheckBox
+                            app:fontFamily="@font/allerta"
+                            android:layout_marginLeft="40dp"
                             android:id="@+id/checkBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -142,23 +153,14 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
-                        <com.google.android.material.button.MaterialButton
-                            android:onClick="@{registerdata::onRegister}"
-                            android:visibility="gone"
-                            app:cornerRadius="20dp"
-                            android:id="@+id/button_register"
-                            android:text="@string/register"
-                            style="@style/button"
-                            android:layout_marginTop="0dp">
-                        </com.google.android.material.button.MaterialButton>
-
-                        <com.google.android.material.button.MaterialButton
-                            app:cornerRadius="20dp"
-                            android:id="@+id/button_Agreemnt"
-                            android:text="Agreement"
-                            style="@style/button"
-                            android:layout_marginTop="0dp">
-                        </com.google.android.material.button.MaterialButton>
+<!--                        <com.google.android.material.button.MaterialButton-->
+<!--                            android:onClick="@{registerdata::onRegister}"-->
+<!--                            app:cornerRadius="20dp"-->
+<!--                            android:id="@+id/button_register"-->
+<!--                            android:text="@string/register"-->
+<!--                            style="@style/button"-->
+<!--                            android:layout_marginTop="0dp">-->
+<!--                        </com.google.android.material.button.MaterialButton>-->
 
 
 <!--                        <com.google.android.material.button.MaterialButton-->
@@ -171,8 +173,36 @@
 
                     </LinearLayout>
 
+
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_marginTop="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.button.MaterialButton
+                        app:cornerRadius="20dp"
+                        android:visibility="gone"
+                        app:fontFamily="@font/allerta"
+                        android:id="@+id/button_Agreemnt"
+                        android:text="Agreement"
+                        style="@style/button"
+                        android:layout_marginTop="0dp">
+                    </com.google.android.material.button.MaterialButton>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:onClick="@{registerdata::onRegister}"
+                        app:cornerRadius="20dp"
+                        android:visibility="gone"
+                        android:id="@+id/button_register"
+                        android:text="@string/register"
+                        style="@style/button"
+                        android:layout_marginTop="0dp">
+                    </com.google.android.material.button.MaterialButton>
+
+                </LinearLayout>
 
             </LinearLayout>
 

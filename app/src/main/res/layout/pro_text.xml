@@ -5,12 +5,12 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="245dp"
-    android:background="@color/back_color">
+    android:layout_height="270dp"
+    android:background="#6ec6ff">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="240dp"
         card_view:cardElevation="2dp"
         card_view:cardCornerRadius="5dp"
         android:layout_margin="20dp">
@@ -40,7 +40,7 @@
                 android:textSize="20dp" />
 
             <TextView
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:gravity="left"
                 android:textColor="@color/top_color"
                 android:id="@+id/text_view_pro_st"
@@ -58,7 +58,7 @@
                 android:layout_toRightOf="@+id/imageView_pro" />
 
             <TextView
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:gravity="left"
                 android:textColor="@color/top_color"
                 android:id="@+id/text_view_pro_ci"
@@ -88,7 +88,7 @@
                 card_view:srcCompat="@drawable/bl" />
 
             <TextView
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:gravity="left"
                 android:textColor="@color/top_color"
                 android:id="@+id/text_view_pro_add"
@@ -112,6 +112,7 @@
                 android:layout_below="@+id/text_view_pro_cn"
                 android:layout_marginLeft="190dp"
                 android:layout_marginTop="7dp"
+                android:textSize="10dp"
                 android:text="@string/shared"
                 app:cornerRadius="20dp">
             </com.google.android.material.button.MaterialButton>

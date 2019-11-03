@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.myfirstapplication.pjtwoui.R
+import com.myfirstapplication.pjtwoui.data.mydataclass.FakeImage
 import com.myfirstapplication.pjtwoui.data.mydataclass.Property
 import com.myfirstapplication.pjtwoui.myinterface.RemovePassDataInterface
 import kotlinx.android.synthetic.main.landlord_property_list_text.view.*
@@ -25,6 +27,8 @@ class RemovePropertyListHandler(view: View): RecyclerView.ViewHolder(view){
 
 class RemovePropertyListAdapter(var items: List<Property>, var context: Context?): RecyclerView.Adapter<RemovePropertyListHandler>() {
 
+    var fakImg = FakeImage.houseList
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RemovePropertyListHandler {
         var res = RemovePropertyListHandler(LayoutInflater.from(context).inflate(R.layout.landlord_property_list_text, parent, false))
         return res
@@ -41,6 +45,8 @@ class RemovePropertyListAdapter(var items: List<Property>, var context: Context?
         holder.city.text = "City: " + items[position].propertycity
         holder.state.text = "State: " + items[position].propertystate
         holder.country.text = "Country: " + items[position].propertycountry
+
+        this.context?.let { Glide.with(it).load(fakImg[position%fakImg.size]).into(holder.img) }
 
 
         holder.img.setOnClickListener(View.OnClickListener {

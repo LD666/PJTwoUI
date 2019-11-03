@@ -2,6 +2,7 @@ package com.myfirstapplication.pjtwoui.fragments
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.telephony.SmsManager
 import android.util.Log
@@ -57,33 +58,20 @@ class ListTenantFragment: Fragment() {
         })
 
         view.button_ten_phone.setOnClickListener(View.OnClickListener {
-            val phoneIntent = Intent(Intent.ACTION_DIAL)
+            val phoneIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel: $tMobile"))
             startActivity(phoneIntent)
         })
 
         view.button_ten_message.setOnClickListener(View.OnClickListener {
 
-            val sendIntent: Intent = Intent().apply {
-                action = Intent.ACTION_SEND
-                putExtra(Intent.EXTRA_TEXT, "This is my text to send.")
-                type = "text/plain"
-            }
-
-            val shareIntent = Intent.createChooser(sendIntent, null)
-            startActivity(shareIntent)
-
+            val phoneIntent = Intent(Intent.ACTION_SENDTO, Uri.parse("smsto: $tMobile"))
+            startActivity(phoneIntent)
         })
 
         view.button_ten_email.setOnClickListener(View.OnClickListener {
 
-            val sendIntent: Intent = Intent().apply {
-                action = Intent.ACTION_SENDTO
-                putExtra(Intent.EXTRA_TEXT, "This is my text to send.")
-                type = "text/plain"
-            }
-
-            val shareIntent = Intent.createChooser(sendIntent, null)
-            startActivity(shareIntent)
+            val phoneIntent = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto: $tEmail"))
+            startActivity(phoneIntent)
         })
 
 

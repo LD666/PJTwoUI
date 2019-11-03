@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.myfirstapplication.pjtwoui.R
+import com.myfirstapplication.pjtwoui.activity.LoginActivity
 import com.myfirstapplication.pjtwoui.activity.WelcomeMainActivity
 import com.myfirstapplication.pjtwoui.data.repositories.MyApplication
 import kotlinx.android.synthetic.main.fragment_tenant_info.view.*
@@ -33,7 +34,7 @@ class TenantInfoFragment: Fragment() {
 
         view.ten_s_out.setOnClickListener(View.OnClickListener {
 
-            var myIntent = Intent(context, WelcomeMainActivity::class.java)
+            var myIntent = Intent(context, LoginActivity::class.java)
             startActivity(myIntent)
 
             var userInfo = MyApplication.context.getSharedPreferences("saveUserInfo", Context.MODE_PRIVATE)

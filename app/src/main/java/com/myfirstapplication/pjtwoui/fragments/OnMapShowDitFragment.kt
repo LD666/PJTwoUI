@@ -7,13 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.bumptech.glide.Glide
 import com.myfirstapplication.pjtwoui.R
 import com.myfirstapplication.pjtwoui.activity.LandlordActivity
 import com.myfirstapplication.pjtwoui.data.repositories.MyApplication
 import kotlinx.android.synthetic.main.fragment_show_pro_deta.view.*
 
-class ShowProDetaFragment: Fragment() {
+class OnMapShowDitFragment: Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,7 +23,6 @@ class ShowProDetaFragment: Fragment() {
 
         var savePro = MyApplication.context.getSharedPreferences("thePro", Context.MODE_PRIVATE)
 
-        var theImg = savePro.getString("theImg", null)
         var theAdd = savePro.getString("theAd", null)
         var theCi = savePro.getString("theCi", null)
         var theSt = savePro.getString("theSt", null)
@@ -32,8 +30,6 @@ class ShowProDetaFragment: Fragment() {
         var theSta = savePro.getString("theSta", null)
         var thePrz = savePro.getString("thePrz", null)
         var theMor = savePro.getString("theMor", null)
-
-        this.context?.let { Glide.with(it).load(theImg).into(view.imageView_pd) }
 
         view.edit_text_dt_address.text = "Address: " + theAdd
         view.edit_text_dt_city.text = "City: " + theCi
@@ -53,5 +49,4 @@ class ShowProDetaFragment: Fragment() {
 
         return view
     }
-
 }

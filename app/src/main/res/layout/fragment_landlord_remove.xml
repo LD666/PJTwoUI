@@ -23,9 +23,9 @@
             android:layout_marginTop="0dp"
             android:layout_marginLeft="50dp"
             style="@style/toolBarText"
-            android:textSize="20dp"
+            android:textSize="30dp"
             android:text="@string/property_remove"
-            app:fontFamily="@font/stalinist_one">
+            app:fontFamily="@font/allerta">
         </TextView>
 
     </LinearLayout>

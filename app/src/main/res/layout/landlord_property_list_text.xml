@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="250dp"
-    android:background="@color/back_color">
+    android:background="#6ec6ff">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -113,6 +113,7 @@
                 android:layout_marginLeft="190dp"
                 android:layout_marginTop="14dp"
                 android:text="@string/shared"
+                android:textSize="10dp"
                 app:cornerRadius="20dp"></com.google.android.material.button.MaterialButton>
 
 

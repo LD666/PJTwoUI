@@ -31,9 +31,9 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="50dp"
                 style="@style/toolBarText"
-                android:textSize="20dp"
+                android:textSize="30dp"
                 android:text="@string/tenant_add"
-                app:fontFamily="@font/stalinist_one">
+                app:fontFamily="@font/allerta">
             </TextView>
 
         </LinearLayout>
@@ -41,7 +41,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="569dp"
-            android:background="@color/top_color"
+            android:background="#6ec6ff"
             android:orientation="vertical"
             android:padding="30dp">
 
@@ -59,6 +59,7 @@
                     android:layout_height="60dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        app:fontFamily="@font/allerta"
                         android:textColor="@color/top_color"
                         android:id="@+id/edit_text_add_tenant_name"
                         style="@style/signUpInEditTextStyle"
@@ -74,6 +75,7 @@
                     android:layout_height="60dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        app:fontFamily="@font/allerta"
                         android:id="@+id/edit_text_add_tenant_email"
                         android:textColor="@color/top_color"
                         style="@style/signUpInEditTextStyle"
@@ -91,6 +93,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edit_text_add_tenant_address"
                         android:textColor="@color/top_color"
+                        app:fontFamily="@font/allerta"
                         style="@style/signUpInEditTextStyle"
                         android:text="@={addTenViewModel.address}"
                         android:hint="Address">
@@ -116,11 +119,13 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:onClick="@{addTenViewModel::onClick}"
+                    app:fontFamily="@font/allerta"
                     android:id="@+id/button_register"
                     style="@style/button"
                     android:layout_marginTop="50dp"
                     android:text="@string/tenant_add"
-                    app:cornerRadius="20dp"></com.google.android.material.button.MaterialButton>
+                    app:cornerRadius="20dp">
+                </com.google.android.material.button.MaterialButton>
 
 
             </LinearLayout>
