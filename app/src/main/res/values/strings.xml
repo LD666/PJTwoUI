@@ -27,6 +27,8 @@
 
     <string name="forgot_one">Enter your email to get password back</string>
 
+    <string name="forgot_e">Here is your email</string>
+
     <string name="forgot_two">Here is your password</string>
 
     <string name="property_list"> Property</string>
@@ -223,7 +225,6 @@ Phone: 3125510886
 lordchi@chi.com
 
 </string>
-
 
 
 </resources>

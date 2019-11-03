@@ -32,6 +32,22 @@ class ForgotPasswordActivity : AppCompatActivity(), ForgotPasswordInterface {
 
 
             if(msg != "Email is not register"){
+
+                var passInfo = getSharedPreferences("passUserInfo", Context.MODE_PRIVATE)
+                var editor = passInfo.edit()
+                var getEmail = it.get("useremail").asString
+                var getPass = it.get("userpassword").asString
+
+                editor.putString("theEmail", getEmail)
+                editor.putString("thePass", getPass)
+                editor.commit()
+
+                var checkE = passInfo.getString("theEmail", null)
+                var checkP = passInfo.getString("thePass", null)
+
+                Log.i("showRes", checkE)
+                Log.i("showRes", checkP)
+
                 var channelName = NotificationChannel("channelID", "myChannelName", NotificationManager.IMPORTANCE_DEFAULT)
                 channelName.description = "myDescription"
                 var notificationManger = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -39,14 +55,16 @@ class ForgotPasswordActivity : AppCompatActivity(), ForgotPasswordInterface {
 
 
                 var notificationBuilder = Notification.Builder(this@ForgotPasswordActivity, channelName.id)
-
                 notificationBuilder.setChannelId(channelName.id)
-
                 notificationBuilder.setContentTitle("Your password reminder")
-                var pass = it.get("userpassword").asString
-                notificationBuilder.setContentText("your password is: $pass")
+                notificationBuilder.setContentText("your password is here")
+
+                var myIntent = Intent(this, ShowPassActivity::class.java)
+                var pendingIntent = PendingIntent.getActivity(this, 321, myIntent, 0)
 
                 notificationBuilder.setSmallIcon(R.drawable.ic_notifications_active_black_24dp)
+
+                notificationBuilder.setContentIntent(pendingIntent)
 
                 notificationBuilder.setAutoCancel(true)
 
@@ -56,7 +74,7 @@ class ForgotPasswordActivity : AppCompatActivity(), ForgotPasswordInterface {
 
             try {
                 var pass = it.get("userpassword").asString
-                text_view_show_password.setText(pass)
+                //text_view_show_password.setText(pass)
             }catch (e: IllegalStateException){
                 text_view_show_password.setText("Email is not Valid")
             }
@@ -72,6 +90,8 @@ class ForgotPasswordActivity : AppCompatActivity(), ForgotPasswordInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgot_password)
+
+
 
         val binding: ActivityForgotPasswordBinding = DataBindingUtil.setContentView(this, R.layout.activity_forgot_password)
         val viewModel = ViewModelProviders.of(this).get(ForgetPasswordViewModel::class.java)

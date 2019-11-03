@@ -11,7 +11,6 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
-        android:windowSoftInputMode="adjustPan"
         android:name=".data.repositories.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,10 +19,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".activity.UserAgreementActivity"></activity>
+        android:usesCleartextTraffic="true"
+        android:windowSoftInputMode="adjustPan">
+        <activity android:name=".activity.ShowPassActivity"></activity>
+        <activity android:name=".activity.UserAgreementActivity" />
         <activity android:name=".activity.MainActivity" />
-        <activity android:name=".activity.LotActivity"
+        <activity
+            android:name=".activity.LotActivity"
             android:windowSoftInputMode="adjustPan">
 
             <!-- <intent-filter> -->
@@ -45,8 +47,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".activity.WelcomeMainActivity">
-        </activity>
+        <activity android:name=".activity.WelcomeMainActivity"></activity>
         <activity android:name=".activity.LandlordTenantListActivity" />
         <activity android:name=".activity.AddRemoveActivity">
 
@@ -57,9 +58,11 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".activity.TennantActivity"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".activity.LandlordActivity"
+        <activity
+            android:name=".activity.TennantActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.LandlordActivity"
             android:windowSoftInputMode="adjustPan">
 
             <!-- <intent-filter> -->
@@ -68,7 +71,8 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".activity.ForgotPasswordActivity"
+        <activity
+            android:name=".activity.ForgotPasswordActivity"
             android:windowSoftInputMode="adjustPan">
 
             <!-- <intent-filter> -->
@@ -78,7 +82,8 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".activity.RegisterActivity"
+        <activity
+            android:name=".activity.RegisterActivity"
             android:windowSoftInputMode="adjustPan">
 
             <!-- <intent-filter> -->
@@ -88,14 +93,17 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".activity.LoginActivity"
+        <activity
+            android:name=".activity.LoginActivity"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"
-                    android:windowSoftInputMode="adjustPan"/>
+                <action
+                    android:name="android.intent.action.MAIN"
+                    android:windowSoftInputMode="adjustPan" />
 
-                <category android:name="android.intent.category.LAUNCHER"
-                    android:windowSoftInputMode="adjustPan"/>
+                <category
+                    android:name="android.intent.category.LAUNCHER"
+                    android:windowSoftInputMode="adjustPan" />
             </intent-filter>
         </activity>
 

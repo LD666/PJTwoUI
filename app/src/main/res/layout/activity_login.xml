@@ -141,7 +141,7 @@
                         app:cornerRadius="20dp"
                         app:fontFamily="@font/allerta"
                         android:onClick="@{loginViewModel::onLogin}"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="10dp"
                         android:text="@string/longin"
                         android:layout_marginRight="50dp"
                         android:textSize="15dp"
@@ -152,7 +152,7 @@
                                             android:layout_gravity="center"
                                             android:id="@+id/button_Reg"
                                             app:cornerRadius="25dp"
-                                            android:layout_marginTop="20dp"
+                                            android:layout_marginTop="10dp"
                                             android:text="@string/register"
                                             android:textSize="15dp"
                                             android:layout_marginRight="50dp"
@@ -164,12 +164,18 @@
                         android:id="@+id/button_login_goto_forgot"
                         app:cornerRadius="20dp"
                         app:fontFamily="@font/allerta"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="10dp"
                         android:textSize="11dp"
                         android:layout_marginRight="50dp"
                         android:text="@string/forgot"
                         style="@style/button">
                     </com.google.android.material.button.MaterialButton>
+
+                    <com.google.android.gms.common.SignInButton
+                        android:layout_marginLeft="40dp"
+                        android:id="@+id/sign_in_button"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 

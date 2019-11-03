@@ -1,6 +1,7 @@
 package com.myfirstapplication.pjtwoui.activity
 
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
@@ -8,17 +9,26 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
 import com.google.gson.JsonObject
 import com.myfirstapplication.pjtwoui.R
 import com.myfirstapplication.pjtwoui.data.repositories.MyApplication
+import com.myfirstapplication.pjtwoui.data.repositories.MyApplication.Companion.context
 import com.myfirstapplication.pjtwoui.databinding.ActivityLoginBinding
 import com.myfirstapplication.pjtwoui.myinterface.LoginInterface
 import com.myfirstapplication.pjtwoui.viewmodel.LoginViewModel
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_login.sign_in_button
+import kotlinx.android.synthetic.main.activity_register.*
 import java.util.concurrent.TimeUnit
 
 class LoginActivity : AppCompatActivity(), LoginInterface {
@@ -83,7 +93,56 @@ class LoginActivity : AppCompatActivity(), LoginInterface {
 //
 //        })
 
+
+        //////////////////////////////////////////////////////////////////////////////////////
+        /// google login
+
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .build()
+
+
+        val mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
+
+
+        sign_in_button.setOnClickListener(View.OnClickListener {
+
+            val signInIntent = mGoogleSignInClient.signInIntent
+            startActivityForResult(signInIntent, RC_SIGN_IN)
+            showSettingDialoge()
+
+        })
+
     }
+
+
+    public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
+        if (requestCode == RC_SIGN_IN) {
+            // The Task returned from this call is always completed, no need to attach
+            // a listener.
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            handleSignInResult(task)
+
+//            var myIntent = Intent(this, TennantActivity::class.java)
+//            startActivity(myIntent)
+
+        }
+    }
+
+    private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
+        try {
+            val account = completedTask.getResult(ApiException::class.java)
+            // Signed in successfully, show authenticated UI.
+        } catch (e: ApiException) {
+            // The ApiException status code indicates the detailed failure reason.
+            // Please refer to the GoogleSignInStatusCodes class reference for more information.
+        }
+
+    }
+
 
     private     inner class myTask : AsyncTask<String, Double, String>(){
 
@@ -103,7 +162,29 @@ class LoginActivity : AppCompatActivity(), LoginInterface {
 
         }
 
+    }
 
+
+    private fun showSettingDialoge(){
+        var builder = AlertDialog.Builder(this)
+        builder.setTitle("You can only use this app as tenant")
+        builder.setMessage("Google can only aloud you use this app as tenant")
+        builder.setPositiveButton("Login as tenant", object: DialogInterface.OnClickListener{
+            override fun onClick(dialoge: DialogInterface?, p1: Int) {
+
+                var myIntent = Intent(this@LoginActivity, TennantActivity::class.java)
+                startActivity(myIntent)
+            }
+
+        })
+        builder.setNegativeButton("Cancel", object: DialogInterface.OnClickListener{
+            override fun onClick(dialoge: DialogInterface?, p1: Int) {
+                dialoge!!.dismiss()
+            }
+
+        })
+
+        builder.show()
     }
 
 }

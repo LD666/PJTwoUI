@@ -27,9 +27,17 @@ class TenantInfoFragment: Fragment() {
         var uEmail = userInfo.getString("uemail", null)
         var uType = userInfo.getString("utype", null)
 
+        Log.i("showIN",uEmail.toString())
+        Log.i("showIN",uType.toString())
 
-        view.ten_f.text = "User Type: " + uType
-        view.ten_sec.text = "User Email: " + uEmail
+
+        if(uEmail == null || uType == null){
+            view.ten_f.text = "You Sign In with google"
+            view.ten_sec.text = "  "
+        }else{
+            view.ten_f.text = "User Type: " + uType
+            view.ten_sec.text = "User Email: " + uEmail
+        }
 
 
         view.ten_s_out.setOnClickListener(View.OnClickListener {

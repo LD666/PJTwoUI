@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    android:windowSoftInputMode="adjustPan"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="forgotViewModel"
+            type="com.myfirstapplication.pjtwoui.viewmodel.ForgetPasswordViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.ForgotPasswordActivity"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@color/top_color"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/back_to_log"
+                style="@style/toolBarsImg"/>
+
+
+            <TextView
+                style="@style/toolBarText"
+                android:layout_marginLeft="30dp"
+                android:layout_width="250dp"
+                android:text="@string/forgot"
+                android:layout_marginBottom="15dp"
+                app:fontFamily="@font/allerta"></TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:background="#6ec6ff"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="@color/background_color">
+
+                <TextView
+                    android:layout_marginTop="30dp"
+                    app:fontFamily="@font/allerta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:textColor="@color/top_color"
+                    android:text="@string/forgot_e">
+                </TextView>
+
+                <TextView
+                    android:gravity="center"
+                    app:fontFamily="@font/allerta"
+                    android:textSize="20dp"
+                    android:textColor="@color/top_color"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/yv_show_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
+                </TextView>
+
+
+                <TextView
+                    app:fontFamily="@font/allerta"
+                    android:id="@+id/text_view_show_password_text"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:text="@string/forgot_two"
+                    style="@style/signUpInEditTextStyle">
+                </TextView>
+
+
+                <TextView
+                    app:fontFamily="@font/allerta"
+                    android:layout_height="60dp"
+                    android:textSize="20dp"
+                    android:textColor="@color/top_color"
+                    android:id="@+id/text_view_show_pass"
+                    android:gravity="center"
+                    style="@style/signUpInEditTextStyle">
+            </TextView>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</layout>

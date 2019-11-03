@@ -33,6 +33,8 @@ class LandlordActivity : AppCompatActivity(), PassTenInfoInterface, SharedToInte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_landlord)
 
+
+
 //        val viewModel = ViewModelProviders.of(this).get(LandlordViewModel::class.java)
 //
 //
