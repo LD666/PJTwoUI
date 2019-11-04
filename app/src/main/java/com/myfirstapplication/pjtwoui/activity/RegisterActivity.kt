@@ -64,6 +64,7 @@ class RegisterActivity : AppCompatActivity(), RegisterInterface {
 //        setContentView(R.layout.activity_register)
 
 
+
         val binding: ActivityRegisterBinding = DataBindingUtil.setContentView(this, R.layout.activity_register)
         val viewModel = ViewModelProviders.of(this).get(RegisterViewModel::class.java)
         binding.registerdata = viewModel

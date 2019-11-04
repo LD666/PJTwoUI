@@ -19,6 +19,7 @@ class TennantActivity : AppCompatActivity() {
         setContentView(R.layout.activity_tenant)
 
 
+
         var mySettingTask = findViewById<BottomNavigationView>(R.id.tenants_bottom_nva)
 
         var allProForTenFragment = AllProForTenFragment()

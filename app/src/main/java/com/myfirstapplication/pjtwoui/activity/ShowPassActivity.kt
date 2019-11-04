@@ -15,6 +15,7 @@ class ShowPassActivity : AppCompatActivity() {
         setContentView(R.layout.activity_show_pass)
 
 
+
         var passInfo = getSharedPreferences("passUserInfo", Context.MODE_PRIVATE)
 
         var checkE = passInfo.getString("theEmail", null)

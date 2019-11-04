@@ -58,7 +58,6 @@ class AddRemoveActivity : AppCompatActivity(), RemovePassDataInterface {
 
 
 
-
         var landlordAddFragment = LandlordAddFragment()
         supportFragmentManager.beginTransaction().replace(R.id.add_remove_container, landlordAddFragment).commit()
 

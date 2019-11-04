@@ -113,8 +113,8 @@ class TenMapFragment: Fragment(), OnMapReadyCallback {
                         Log.i("showData", savePro.getString("theAd", null).toString())
 
 
-//                        var onMapShowDitFragment = OnMapShowDitFragment()
-//                        fragmentManager?.beginTransaction()?.replace(R.id.landlord_main, onMapShowDitFragment)?.commit()
+                        var onMapShowDitFragment = OnMapShowDitFragment()
+                        fragmentManager?.beginTransaction()?.replace(R.id.landlord_main, onMapShowDitFragment)?.commit()
                     }
 
                 }

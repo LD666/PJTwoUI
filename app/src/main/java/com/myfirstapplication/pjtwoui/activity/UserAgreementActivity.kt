@@ -15,6 +15,7 @@ class UserAgreementActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_agreement)
 
+
         button_agr.setOnClickListener(View.OnClickListener {
 
             var agr = getSharedPreferences("agr", Context.MODE_PRIVATE)

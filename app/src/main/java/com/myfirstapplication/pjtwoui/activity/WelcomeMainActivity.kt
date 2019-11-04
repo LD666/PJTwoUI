@@ -16,6 +16,7 @@ class WelcomeMainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome_main)
 
+
         var agr = getSharedPreferences("agr", Context.MODE_PRIVATE)
 
         if(agr.getString("isAgr", null) == null){

@@ -11,6 +11,7 @@ class LotActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lot)
 
+
 //        var addTenantFragment = AddTenantFragment()
 //        supportFragmentManager.beginTransaction().add(R.id.WTF, addTenantFragment).commit()
 
