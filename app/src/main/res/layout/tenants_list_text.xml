@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:app="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="230dp"
+    android:layout_height="120dp"
     android:background="#6ec6ff">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="110dp"
         card_view:cardElevation="2dp"
         card_view:cardCornerRadius="5dp"
-        android:layout_margin="20dp">
+        android:layout_margin="5dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -30,17 +29,17 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="130dp"
+                android:layout_marginTop="80dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_toEndOf="@+id/ten_img"
                 android:layout_toRightOf="@+id/ten_img"
                 android:gravity="left"
-                android:textSize="20dp" />
+                android:textSize="15dp" />
 
             <TextView
                 android:textColor="@color/top_color"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:gravity="left"
                 android:id="@+id/text_view_t_address"
                 android:layout_width="202dp"
@@ -50,7 +49,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="90dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_toEndOf="@+id/ten_img"
@@ -58,7 +57,7 @@
 
             <TextView
                 android:textColor="@color/top_color"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:gravity="left"
                 android:id="@+id/text_view_t_email"
                 android:layout_width="200dp"
@@ -68,7 +67,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="8dp"
                 android:layout_toEndOf="@+id/ten_img"
@@ -76,18 +75,19 @@
 
             <ImageView
                 android:id="@+id/ten_img"
-                android:layout_width="163dp"
-                android:layout_height="191dp"
+                android:layout_width="126dp"
+                android:layout_height="103dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
+                android:layout_marginBottom="10dp"
                 android:layout_marginStart="7dp"
                 android:layout_marginLeft="7dp"
                 android:layout_marginTop="5dp"
                 card_view:srcCompat="@drawable/tt_img" />
 
             <TextView
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:gravity="left"
                 android:textColor="@color/top_color"
                 android:id="@+id/text_view_t_name"

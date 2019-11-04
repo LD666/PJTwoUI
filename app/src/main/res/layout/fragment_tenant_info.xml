@@ -12,7 +12,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="?android:attr/actionBarSize"
         android:background="@color/top_color"
         android:orientation="horizontal"
         android:padding="10dp">
@@ -22,7 +22,7 @@
         <TextView
             android:layout_marginTop="0dp"
             style="@style/toolBarText"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:layout_marginLeft="85dp"
             android:layout_height="90dp"
             android:text="@string/tenant_info"
@@ -34,17 +34,17 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="552dp"
+        android:background="#6ec6ff"
         android:orientation="vertical"
-        android:padding="20dp"
-        android:background="#6ec6ff">
+        android:padding="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/background_color"
             android:orientation="vertical"
-            android:padding="20dp"
-            android:background="@color/background_color">
+            android:padding="20dp">
 
             <ImageView
                 android:id="@+id/imageView"
@@ -54,35 +54,44 @@
 
             <TextView
                 android:id="@+id/ten_f"
-                android:gravity="center"
-                android:textSize="20dp"
-                android:textColor="@color/top_color"
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
-            </TextView>
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textColor="@color/top_color"
+                android:textSize="20dp"></TextView>
 
 
             <TextView
                 android:id="@+id/ten_sec"
-                android:gravity="center"
-                android:textSize="20dp"
-                android:textColor="@color/top_color"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp">
-            </TextView>
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textColor="@color/top_color"
+                android:textSize="20dp"></TextView>
 
 
             <com.google.android.material.button.MaterialButton
-                app:fontFamily="@font/allerta"
                 android:id="@+id/ten_s_out"
                 style="@style/button"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="60dp"
                 android:text="@string/sign_out"
-                app:cornerRadius="20dp">
-            </com.google.android.material.button.MaterialButton>
+                android:visibility="gone"
+                app:cornerRadius="20dp"
+                app:fontFamily="@font/allerta"></com.google.android.material.button.MaterialButton>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ten_s_out_google"
+                style="@style/button"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:text="Google Signout"
+                android:visibility="gone"
+                app:cornerRadius="20dp"
+                app:fontFamily="@font/allerta"></com.google.android.material.button.MaterialButton>
 
 
         </LinearLayout>

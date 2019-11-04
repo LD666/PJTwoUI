@@ -12,37 +12,43 @@
             type="com.myfirstapplication.pjtwoui.viewmodel.RegisterViewModel" />
     </data>
 
-
     <LinearLayout
         android:id="@+id/root_register"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".activity.RegisterActivity"
-
         android:orientation="vertical">
 
+        <androidx.appcompat.widget.Toolbar
+            style="@style/toolbar">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:background="@color/top_color"
-            android:orientation="horizontal"
-            android:padding="10dp">
-
-
-            <ImageView
-                android:id="@+id/signin_back"
-                style="@style/toolBarsImg" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/top_color"
+                android:orientation="horizontal"
+                android:padding="10dp">
 
 
-            <TextView
-                app:fontFamily="@font/allerta"
-                style="@style/toolBarText"
-                android:text="@string/signin"
-                android:layout_marginBottom="15dp">
-            </TextView>
+                <ImageButton
+                    android:background="@color/colorPrimary"
+                    android:layout_height="30dp"
+                    android:id="@+id/signin_back"
+                    style="@style/toolBarsImg" />
 
-        </LinearLayout>
+
+                <TextView
+                    android:layout_marginLeft="30dp"
+                    app:fontFamily="@font/allerta"
+                    style="@style/toolBarText"
+                    android:text="@string/signin"
+                    android:textSize="20dp"
+                    android:layout_marginBottom="15dp">
+                </TextView>
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -123,6 +129,7 @@
                         <RadioButton
                             app:fontFamily="@font/allerta"
                             android:layout_marginLeft="40dp"
+                            android:textColor="@color/top_color"
                             android:onClick="@{registerdata::isLandlord}"
                             android:layout_marginTop="15dp"
                             android:id="@+id/isLandlord"
@@ -133,6 +140,7 @@
                         <RadioButton
                             app:fontFamily="@font/allerta"
                             android:layout_marginLeft="40dp"
+                            android:textColor="@color/top_color"
                             android:onClick="@{registerdata::isTenant}"
                             android:id="@+id/isTenant"
                             android:layout_width="match_parent"
@@ -145,6 +153,7 @@
                             android:id="@+id/checkBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textColor="@color/top_color"
                             android:text="Agreement" />
                     </RadioGroup>
 

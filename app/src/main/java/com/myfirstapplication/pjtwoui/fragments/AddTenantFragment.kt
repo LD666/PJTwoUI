@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.google.gson.JsonObject
 import com.myfirstapplication.pjtwoui.R
 import com.myfirstapplication.pjtwoui.activity.LandlordActivity
 import com.myfirstapplication.pjtwoui.databinding.FragmentAddTenantBinding

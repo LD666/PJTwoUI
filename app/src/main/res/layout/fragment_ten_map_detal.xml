@@ -31,28 +31,27 @@
                 <ImageButton
                     android:background="@color/colorPrimary"
                     android:layout_height="30dp"
-                    android:id="@+id/rm_property_back"
+                    android:id="@+id/dt_property_back_ten_ten"
                     style="@style/toolBarsImg" />
 
                 <TextView
+                    app:fontFamily="@font/allerta"
                     android:layout_height="90dp"
                     android:layout_marginTop="0dp"
                     android:layout_marginLeft="40dp"
                     style="@style/toolBarText"
                     android:textSize="20dp"
-                    android:text="@string/remove"
-                    app:fontFamily="@font/allerta">
+                    android:text="@string/pro_di">
                 </TextView>
 
             </LinearLayout>
-
 
         </androidx.appcompat.widget.Toolbar>
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="548dp"
+            android:layout_height="550dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
@@ -66,31 +65,19 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#F2F3F5"
+                android:background="#F3F8F8"
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <TextView
-                    android:id="@+id/edit_text_rm_id"
-                    style="@style/signUpInEditTextStyle"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:textColor="@color/top_color"
-                    android:textSize="20dp"
-                    app:fontFamily="@font/allerta"></TextView>
-
-                <TextView
-                    android:id="@+id/edit_text_rm_address"
-                    style="@style/signUpInEditTextStyle"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:textColor="@color/top_color"
-                    android:textSize="20dp"
-                    app:fontFamily="@font/allerta"></TextView>
+                <ImageView
+                    android:id="@+id/dt_property_back_ten"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    app:srcCompat="@drawable/bl" />
 
 
                 <TextView
-                    android:id="@+id/edit_text_rm_city"
+                    android:id="@+id/edit_text_dt_address_ten"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
@@ -100,7 +87,7 @@
 
 
                 <TextView
-                    android:id="@+id/edit_text_rm_state"
+                    android:id="@+id/edit_text_dt_city_ten"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
@@ -110,7 +97,7 @@
 
 
                 <TextView
-                    android:id="@+id/edit_text_rm_country"
+                    android:id="@+id/edit_text_dt_state_ten"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
@@ -120,7 +107,7 @@
 
 
                 <TextView
-                    android:id="@+id/edit_text_rm_status"
+                    android:id="@+id/edit_text_dt_country_ten"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
@@ -130,7 +117,7 @@
 
 
                 <TextView
-                    android:id="@+id/edit_text_rm_price"
+                    android:id="@+id/edit_text_dt_status_ten"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
@@ -140,7 +127,7 @@
 
 
                 <TextView
-                    android:id="@+id/edit_text_rm_mortage_info"
+                    android:id="@+id/edit_text_dt_price_ten"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
@@ -148,14 +135,6 @@
                     android:textSize="20dp"
                     app:fontFamily="@font/allerta"></TextView>
 
-
-                <com.google.android.material.button.MaterialButton
-                    style="@style/button"
-                    android:layout_marginTop="40dp"
-                    android:onClick="@{removePropertyViewModel::onRemovePressed}"
-                    android:text="@string/remove_p"
-                    app:cornerRadius="20dp"
-                    app:fontFamily="@font/allerta"></com.google.android.material.button.MaterialButton>
 
             </LinearLayout>
 

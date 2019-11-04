@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SEND_SMS" />
 
-
     <meta-data
         android:name="firebase_crashlytics_collection_enabled"
         android:value="false" />
@@ -26,7 +25,25 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="adjustPan">
-        <activity android:name=".activity.ShowPassActivity"></activity>
+        <activity android:name=".activity.SPActivity">
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.MAIN"
+                    android:windowSoftInputMode="adjustPan" />
+
+                <category
+                    android:name="android.intent.category.LAUNCHER"
+                    android:windowSoftInputMode="adjustPan" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".fcm.MyFCM">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".activity.ShowPassActivity" />
         <activity android:name=".activity.UserAgreementActivity" />
         <activity android:name=".activity.MainActivity" />
         <activity
@@ -52,7 +69,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".activity.WelcomeMainActivity"></activity>
+        <activity android:name=".activity.WelcomeMainActivity" />
         <activity android:name=".activity.LandlordTenantListActivity" />
         <activity android:name=".activity.AddRemoveActivity">
 
@@ -101,15 +118,15 @@
         <activity
             android:name=".activity.LoginActivity"
             android:windowSoftInputMode="adjustPan">
-            <intent-filter>
-                <action
-                    android:name="android.intent.action.MAIN"
-                    android:windowSoftInputMode="adjustPan" />
+<!--            <intent-filter>-->
+<!--                <action-->
+<!--                    android:name="android.intent.action.MAIN"-->
+<!--                    android:windowSoftInputMode="adjustPan" />-->
 
-                <category
-                    android:name="android.intent.category.LAUNCHER"
-                    android:windowSoftInputMode="adjustPan" />
-            </intent-filter>
+<!--                <category-->
+<!--                    android:name="android.intent.category.LAUNCHER"-->
+<!--                    android:windowSoftInputMode="adjustPan" />-->
+<!--            </intent-filter>-->
         </activity>
 
         <meta-data

@@ -18,27 +18,34 @@
         tools:context=".activity.LoginActivity"
         android:orientation="vertical">
 
+        <androidx.appcompat.widget.Toolbar
+            style="@style/toolbar">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:background="@color/top_color"
-            android:orientation="horizontal"
-            android:padding="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/top_color"
+                android:orientation="horizontal"
+                android:padding="10dp">
 
-<!--            <ImageView-->
-<!--                android:id="@+id/login_back"-->
-<!--                style="@style/toolBarsImg"/>-->
+                <!--            <ImageView-->
+                <!--                android:id="@+id/login_back"-->
+                <!--                style="@style/toolBarsImg"/>-->
 
 
-            <TextView
-                style="@style/toolBarText"
-                android:text="@string/longin"
-                android:layout_marginLeft="90dp"
-                android:layout_marginBottom="15dp"
-                app:fontFamily="@font/allerta"></TextView>
+                <TextView
+                    style="@style/toolBarText"
+                    android:text="@string/longin"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginBottom="15dp"
+                    app:fontFamily="@font/allerta">
+                </TextView>
 
-        </LinearLayout>
+            </LinearLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
 
 
         <LinearLayout
@@ -55,6 +62,10 @@
                 android:padding="20dp"
                 android:background="@color/background_color">
 
+                <ImageView
+                    style="@style/mainImg"
+                    android:layout_width="252dp"
+                    android:layout_height="162dp" />
 
 
 
@@ -92,96 +103,102 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="90dp">-->
+                <!--                <LinearLayout-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="90dp">-->
 
-<!--&lt;!&ndash;                    <com.google.android.material.button.MaterialButton&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:layout_gravity="center"&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:id="@+id/button_Reg"&ndash;&gt;-->
-<!--&lt;!&ndash;                        app:cornerRadius="25dp"&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:layout_marginLeft="80dp"&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:layout_marginTop="10dp"&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:text="@string/register"&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:textSize="20dp"&ndash;&gt;-->
-<!--&lt;!&ndash;                        style="@style/button">&ndash;&gt;-->
-<!--&lt;!&ndash;                    </com.google.android.material.button.MaterialButton>&ndash;&gt;-->
+                <!--&lt;!&ndash;                    <com.google.android.material.button.MaterialButton&ndash;&gt;-->
+                <!--&lt;!&ndash;                        android:layout_gravity="center"&ndash;&gt;-->
+                <!--&lt;!&ndash;                        android:id="@+id/button_Reg"&ndash;&gt;-->
+                <!--&lt;!&ndash;                        app:cornerRadius="25dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;                        android:layout_marginLeft="80dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;                        android:layout_marginTop="10dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;                        android:text="@string/register"&ndash;&gt;-->
+                <!--&lt;!&ndash;                        android:textSize="20dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;                        style="@style/button">&ndash;&gt;-->
+                <!--&lt;!&ndash;                    </com.google.android.material.button.MaterialButton>&ndash;&gt;-->
 
-<!--                    <com.google.android.material.button.MaterialButton-->
-<!--                        android:id="@+id/button_logIn"-->
-<!--                        app:cornerRadius="20dp"-->
-<!--                        app:fontFamily="@font/allerta"-->
-<!--                        android:onClick="@{loginViewModel::onLogin}"-->
-<!--                        android:layout_marginTop="20dp"-->
-<!--                        android:text="@string/longin"-->
-<!--                        android:layout_marginLeft="90dp"-->
-<!--                        android:textSize="20dp"-->
-<!--                        style="@style/button">-->
-<!--                    </com.google.android.material.button.MaterialButton>-->
+                <!--                    <com.google.android.material.button.MaterialButton-->
+                <!--                        android:id="@+id/button_logIn"-->
+                <!--                        app:cornerRadius="20dp"-->
+                <!--                        app:fontFamily="@font/allerta"-->
+                <!--                        android:onClick="@{loginViewModel::onLogin}"-->
+                <!--                        android:layout_marginTop="20dp"-->
+                <!--                        android:text="@string/longin"-->
+                <!--                        android:layout_marginLeft="90dp"-->
+                <!--                        android:textSize="20dp"-->
+                <!--                        style="@style/button">-->
+                <!--                    </com.google.android.material.button.MaterialButton>-->
 
-<!--                </LinearLayout>-->
+                <!--                </LinearLayout>-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="230dp"
                     android:orientation="vertical">
 
-<!--                    <com.google.android.material.button.MaterialButton-->
-<!--                        android:id="@+id/button_logIn"-->
-<!--                        app:cornerRadius="20dp"-->
-<!--                        android:onClick="@{loginViewModel::onLogin}"-->
-<!--                        android:layout_marginTop="20dp"-->
-<!--                        android:text="@string/longin"-->
-<!--                        android:textSize="25dp"-->
-<!--                        style="@style/button">-->
-<!--                    </com.google.android.material.button.MaterialButton>-->
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/button_logIn"-->
+                    <!--                        app:cornerRadius="20dp"-->
+                    <!--                        android:onClick="@{loginViewModel::onLogin}"-->
+                    <!--                        android:layout_marginTop="20dp"-->
+                    <!--                        android:text="@string/longin"-->
+                    <!--                        android:textSize="25dp"-->
+                    <!--                        style="@style/button">-->
+                    <!--                    </com.google.android.material.button.MaterialButton>-->
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/button_logIn"
-                        app:cornerRadius="20dp"
-                        app:fontFamily="@font/allerta"
-                        android:onClick="@{loginViewModel::onLogin}"
-                        android:layout_marginTop="10dp"
-                        android:text="@string/longin"
-                        android:layout_marginRight="50dp"
-                        android:textSize="15dp"
-                        style="@style/button">
-                    </com.google.android.material.button.MaterialButton>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-                                        <com.google.android.material.button.MaterialButton
-                                            android:layout_gravity="center"
-                                            android:id="@+id/button_Reg"
-                                            app:cornerRadius="25dp"
-                                            android:layout_marginTop="10dp"
-                                            android:text="@string/register"
-                                            android:textSize="15dp"
-                                            android:layout_marginRight="50dp"
-                                            app:fontFamily="@font/allerta"
-                                            style="@style/button">
-                                        </com.google.android.material.button.MaterialButton>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/button_logIn"
+                            app:cornerRadius="20dp"
+                            android:layout_marginLeft="5dp"
+                            app:fontFamily="@font/allerta"
+                            android:onClick="@{loginViewModel::onLogin}"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/longin"
+                            android:textSize="15dp"
+                            style="@style/button">
+                        </com.google.android.material.button.MaterialButton>
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/button_login_goto_forgot"
-                        app:cornerRadius="20dp"
-                        app:fontFamily="@font/allerta"
-                        android:layout_marginTop="10dp"
-                        android:textSize="11dp"
-                        android:layout_marginRight="50dp"
-                        android:text="@string/forgot"
-                        style="@style/button">
-                    </com.google.android.material.button.MaterialButton>
+                        <com.google.android.material.button.MaterialButton
+                            android:layout_gravity="center"
+                            android:id="@+id/button_Reg"
+                            app:cornerRadius="25dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/register"
+                            android:textSize="15dp"
+                            app:fontFamily="@font/allerta"
+                            style="@style/button">
+                        </com.google.android.material.button.MaterialButton>
+                    </LinearLayout>
 
                     <com.google.android.gms.common.SignInButton
-                        android:layout_marginLeft="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp"
                         android:id="@+id/sign_in_button"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content" />
 
+                    <TextView
+                        android:id="@+id/button_login_goto_forgot"
+                        app:cornerRadius="20dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        app:fontFamily="@font/allerta"
+                        android:layout_marginTop="40dp"
+                        android:textSize="20dp"
+                        android:textColor="@color/colorPrimary"
+                        android:text="@string/forgot"
+                        style="@style/button">
+                    </TextView>
+
+
                 </LinearLayout>
-
-
-                <ImageView
-                    style="@style/mainImg"/>
 
             </LinearLayout>
 

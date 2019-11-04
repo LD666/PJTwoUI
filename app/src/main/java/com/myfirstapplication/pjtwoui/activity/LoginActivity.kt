@@ -168,7 +168,7 @@ class LoginActivity : AppCompatActivity(), LoginInterface {
     private fun showSettingDialoge(){
         var builder = AlertDialog.Builder(this)
         builder.setTitle("You can only use this app as tenant")
-        builder.setMessage("Google can only aloud you use this app as tenant")
+        builder.setMessage("Google login only allow you to use this app as tenant")
         builder.setPositiveButton("Login as tenant", object: DialogInterface.OnClickListener{
             override fun onClick(dialoge: DialogInterface?, p1: Int) {
 

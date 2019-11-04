@@ -8,8 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.gms.tasks.Task
 import com.myfirstapplication.pjtwoui.R
 import com.myfirstapplication.pjtwoui.activity.LoginActivity
+import com.myfirstapplication.pjtwoui.activity.TennantActivity
 import com.myfirstapplication.pjtwoui.activity.WelcomeMainActivity
 import com.myfirstapplication.pjtwoui.data.repositories.MyApplication
 import kotlinx.android.synthetic.main.fragment_tenant_info.view.*
@@ -21,6 +26,14 @@ class TenantInfoFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .build()
+
+
+        val mGoogleSignInClient = GoogleSignIn.getClient(requireActivity(), gso)
+
         var view = inflater.inflate(R.layout.fragment_tenant_info, container, false)
 
         var userInfo = MyApplication.context.getSharedPreferences("saveUserInfo", Context.MODE_PRIVATE)
@@ -32,11 +45,13 @@ class TenantInfoFragment: Fragment() {
 
 
         if(uEmail == null || uType == null){
+            view.ten_s_out_google.visibility = View.VISIBLE
             view.ten_f.text = "You Sign In with google"
             view.ten_sec.text = "  "
         }else{
             view.ten_f.text = "User Type: " + uType
             view.ten_sec.text = "User Email: " + uEmail
+            view.ten_s_out.visibility = View.VISIBLE
         }
 
 
@@ -56,7 +71,18 @@ class TenantInfoFragment: Fragment() {
 
         })
 
+        view.ten_s_out_google.setOnClickListener(View.OnClickListener {
+
+            mGoogleSignInClient.signOut()
+
+            var myIntent = Intent(context, LoginActivity::class.java)
+            startActivity(myIntent)
+
+        })
+
+
         return view
     }
+
 
 }

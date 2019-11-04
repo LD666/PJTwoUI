@@ -18,29 +18,36 @@
         tools:context=".activity.ForgotPasswordActivity"
         android:orientation="vertical">
 
+        <androidx.appcompat.widget.Toolbar
+            style="@style/toolbar">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:background="@color/top_color"
-            android:orientation="horizontal"
-            android:padding="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/top_color"
+                android:orientation="horizontal"
+                android:padding="10dp">
 
-            <ImageView
-                android:id="@+id/back_to_log"
-                style="@style/toolBarsImg"/>
+                <ImageButton
+                    android:background="@color/colorPrimary"
+                    android:layout_height="30dp"
+                    android:id="@+id/back_to_log"
+                    style="@style/toolBarsImg"/>
 
 
-            <TextView
-                style="@style/toolBarText"
-                android:layout_marginLeft="30dp"
-                android:layout_width="250dp"
-                android:text="@string/forgot"
-                android:layout_marginBottom="15dp"
-                app:fontFamily="@font/allerta"></TextView>
+                <TextView
+                    style="@style/toolBarText"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="250dp"
+                    android:textSize="20dp"
+                    android:text="@string/forgot"
+                    android:layout_marginBottom="15dp"
+                    app:fontFamily="@font/allerta">
+                </TextView>
 
-        </LinearLayout>
+            </LinearLayout>
 
+        </androidx.appcompat.widget.Toolbar>
 
         <LinearLayout
             android:layout_width="match_parent"

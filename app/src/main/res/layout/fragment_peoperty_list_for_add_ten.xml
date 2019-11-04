@@ -5,30 +5,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.LandlordActivity">
+    tools:context=".activity.LandlordActivity"
+    android:background="@color/colorPrimaryDark">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:background="@color/top_color"
-        android:orientation="horizontal"
-        android:padding="10dp">
+    <androidx.appcompat.widget.Toolbar
+        style="@style/toolbar">
 
-        <ImageView
-            android:id="@+id/rm_property_back"
-            style="@style/toolBarsImg" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/top_color"
+            android:orientation="horizontal"
+            android:padding="10dp">
 
-        <TextView
-            app:fontFamily="@font/allerta"
-            style="@style/toolBarText"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="40dp"
-            android:layout_width="250dp"
-            android:text="@string/list">
-        </TextView>
+            <ImageButton
+                android:background="@color/colorPrimary"
+                android:layout_height="30dp"
+                android:id="@+id/rm_property_back"
+                style="@style/toolBarsImg" />
+
+            <TextView
+                app:fontFamily="@font/allerta"
+                style="@style/toolBarText"
+                android:textSize="20dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="30dp"
+                android:layout_width="250dp"
+                android:text="@string/list">
+            </TextView>
 
 
-    </LinearLayout>
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/for_add_ten_list_recycler"

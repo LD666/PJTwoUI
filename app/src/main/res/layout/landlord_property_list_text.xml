@@ -5,15 +5,15 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
+    android:layout_height="120dp"
     android:background="#6ec6ff">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="110dp"
         card_view:cardElevation="2dp"
         card_view:cardCornerRadius="5dp"
-        android:layout_margin="20dp">
+        android:layout_margin="5dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -31,16 +31,16 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="130dp"
+                android:layout_marginTop="80dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_toEndOf="@+id/imageView_pro"
                 android:layout_toRightOf="@+id/imageView_pro"
                 android:gravity="left"
-                android:textSize="20dp" />
+                android:textSize="15dp" />
 
             <TextView
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:gravity="left"
                 android:textColor="@color/top_color"
                 android:id="@+id/text_view_property_state"
@@ -51,14 +51,14 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="90dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_toEndOf="@+id/imageView_pro"
                 android:layout_toRightOf="@+id/imageView_pro" />
 
             <TextView
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:gravity="left"
                 android:textColor="@color/top_color"
                 android:id="@+id/text_view_property_city"
@@ -69,26 +69,28 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="8dp"
                 android:layout_toEndOf="@+id/imageView_pro"
                 android:layout_toRightOf="@+id/imageView_pro" />
 
             <ImageView
-                card_view:srcCompat="@drawable/bl"
                 android:id="@+id/imageView_pro"
-                android:layout_width="171dp"
-                android:layout_height="222dp"
+                android:layout_width="136dp"
+                android:layout_height="98dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="7dp"
-                android:layout_marginLeft="7dp"
-                android:layout_marginTop="5dp" />
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:scaleType="center"
+                card_view:srcCompat="@drawable/bl" />
 
             <TextView
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:gravity="left"
                 android:textColor="@color/top_color"
                 android:id="@+id/text_view_property_address"
@@ -105,16 +107,20 @@
                 android:layout_toEndOf="@+id/imageView_pro"
                 android:layout_toRightOf="@+id/imageView_pro" />
 
-            <com.google.android.material.button.MaterialButton
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/shared"
-                android:visibility="gone"
                 style="@style/button"
+                android:visibility="gone"
+                android:layout_height="50dp"
+                android:layout_width="50dp"
                 android:layout_below="@+id/text_view_property_country"
-                android:layout_marginLeft="190dp"
-                android:layout_marginTop="14dp"
+                android:layout_marginLeft="300dp"
+                android:layout_marginTop="6dp"
                 android:text="@string/shared"
+                android:src="@drawable/ic_share_black_24dp"
                 android:textSize="10dp"
-                app:cornerRadius="20dp"></com.google.android.material.button.MaterialButton>
+                app:cornerRadius="20dp">
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
 
         </RelativeLayout>

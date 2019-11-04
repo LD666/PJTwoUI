@@ -17,10 +17,31 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.myfirstapplication.pjtwoui.R
 import com.myfirstapplication.pjtwoui.data.mydataclass.Property
 import com.myfirstapplication.pjtwoui.data.repositories.MyApplication
+import com.myfirstapplication.pjtwoui.infowindow.InfoWindow
 import com.myfirstapplication.pjtwoui.viewmodel.LandlordViewModel
 import kotlinx.android.synthetic.main.fragment_map.*
 
-class MyMapFragment: Fragment(), OnMapReadyCallback {
+class MyMapFragment: Fragment(), OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
+
+    override fun onInfoWindowClick(p0: Marker) {
+        var property = p0.tag as Property
+        var savePro = MyApplication.context.getSharedPreferences("thePro", Context.MODE_PRIVATE)
+        var editor = savePro.edit()
+        editor.putString("theAd",  property.propertyaddress)
+        editor.putString("theCi", property.propertycity)
+        editor.putString("theSt", property.propertystate)
+        editor.putString("theCn", property.propertycountry)
+        editor.putString("theSta", property.propertystate)
+        editor.putString("thePrz", property.propertypurchaseprice)
+        editor.putString("theMor", property.propertymortageinfo)
+        editor.commit()
+
+        Log.i("showData", savePro.getString("theAd", null).toString())
+
+
+        var onMapShowDitFragment = OnMapShowDitFragment()
+        fragmentManager?.beginTransaction()?.replace(R.id.landlord_main, onMapShowDitFragment)?.commit()
+    }
 //    override fun onMarkerClick(p0: Marker?): Boolean {
 //
 //        var property = p0?.tag as Property
@@ -62,8 +83,16 @@ class MyMapFragment: Fragment(), OnMapReadyCallback {
     }
 
     override fun onMapReady(map: GoogleMap?) {
+
+
+
         map?.let { it ->
             googleMap = it
+
+            with(googleMap){
+                setInfoWindowAdapter(InfoWindow(this@MyMapFragment))
+                setOnInfoWindowClickListener(this@MyMapFragment)
+            }
 
             val viewModel = ViewModelProviders.of(this).get(LandlordViewModel::class.java)
 
@@ -80,25 +109,25 @@ class MyMapFragment: Fragment(), OnMapReadyCallback {
 
                    marker.tag = getRes.property[i]
 
-                   googleMap.setOnInfoWindowClickListener {
-                       Log.i("show", "clicked")
-                       var savePro = MyApplication.context.getSharedPreferences("thePro", Context.MODE_PRIVATE)
-                       var editor = savePro.edit()
-                       editor.putString("theAd",  getRes.property[i].propertyaddress)
-                       editor.putString("theCi", getRes.property[i].propertycity)
-                       editor.putString("theSt", getRes.property[i].propertystate)
-                       editor.putString("theCn", getRes.property[i].propertycountry)
-                       editor.putString("theSta", getRes.property[i].propertystate)
-                       editor.putString("thePrz", getRes.property[i].propertypurchaseprice)
-                       editor.putString("theMor", getRes.property[i].propertymortageinfo)
-                       editor.commit()
-
-                       Log.i("showData", savePro.getString("theAd", null).toString())
-
-
-                       var onMapShowDitFragment = OnMapShowDitFragment()
-                       fragmentManager?.beginTransaction()?.replace(R.id.landlord_main, onMapShowDitFragment)?.commit()
-                   }
+//                   googleMap.setOnInfoWindowClickListener {
+//                       Log.i("show", "clicked")
+//                       var savePro = MyApplication.context.getSharedPreferences("thePro", Context.MODE_PRIVATE)
+//                       var editor = savePro.edit()
+//                       editor.putString("theAd",  getRes.property[i].propertyaddress)
+//                       editor.putString("theCi", getRes.property[i].propertycity)
+//                       editor.putString("theSt", getRes.property[i].propertystate)
+//                       editor.putString("theCn", getRes.property[i].propertycountry)
+//                       editor.putString("theSta", getRes.property[i].propertystate)
+//                       editor.putString("thePrz", getRes.property[i].propertypurchaseprice)
+//                       editor.putString("theMor", getRes.property[i].propertymortageinfo)
+//                       editor.commit()
+//
+//                       Log.i("showData", savePro.getString("theAd", null).toString())
+//
+//
+//                       var onMapShowDitFragment = OnMapShowDitFragment()
+//                       fragmentManager?.beginTransaction()?.replace(R.id.landlord_main, onMapShowDitFragment)?.commit()
+//                   }
 
                }
 

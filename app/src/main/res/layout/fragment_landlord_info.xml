@@ -12,7 +12,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="?android:attr/actionBarSize"
         android:background="@color/top_color"
         android:orientation="horizontal"
         android:padding="10dp">
@@ -22,7 +22,7 @@
         <TextView
             android:layout_marginTop="5dp"
             style="@style/toolBarText"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:layout_marginLeft="65dp"
             android:layout_width="240dp"
             android:layout_height="90dp"
@@ -35,49 +35,46 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="549dp"
+        android:background="#6ec6ff"
         android:orientation="vertical"
-        android:padding="20dp"
-        android:background="#6ec6ff">
+        android:padding="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/background_color"
             android:orientation="vertical"
-            android:padding="20dp"
-            android:background="@color/background_color">
+            android:padding="20dp">
 
 
             <TextView
-                android:textColor="@color/top_color"
-                android:textSize="30dp"
-                android:gravity="center"
                 android:id="@+id/text_view_landlord_type"
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
-            </TextView>
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textColor="@color/top_color"
+                android:textSize="30dp"></TextView>
 
 
             <TextView
-                android:textColor="@color/top_color"
-                android:textSize="30dp"
-                android:gravity="center"
                 android:id="@+id/text_view_landlord_email"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp">
-            </TextView>
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textColor="@color/top_color"
+                android:textSize="30dp"></TextView>
 
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_landlord_sign_out"
-                app:cornerRadius="20dp"
-                app:fontFamily="@font/allerta"
+                style="@style/button"
                 android:layout_marginTop="60dp"
                 android:text="@string/sign_out"
-                style="@style/button">
-            </com.google.android.material.button.MaterialButton>
+                app:cornerRadius="20dp"
+                app:fontFamily="@font/allerta"></com.google.android.material.button.MaterialButton>
 
 
         </LinearLayout>

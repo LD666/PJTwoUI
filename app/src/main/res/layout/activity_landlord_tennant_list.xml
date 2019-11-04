@@ -14,13 +14,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="90dp"
+            android:layout_height="?android:attr/actionBarSize"
             android:background="@color/top_color"
             android:orientation="horizontal"
             android:padding="10dp">
 
             <ImageView
                 android:id="@+id/add_ten_back"
+                android:layout_height="30dp"
                 style="@style/toolBarsImg"/>
 
 
@@ -29,6 +30,7 @@
                 android:text="@string/property_list"
                 android:layout_width="250dp"
                 android:layout_height="90dp"
+                android:textSize="20dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginBottom="15dp"
                 app:fontFamily="@font/allerta">
@@ -37,26 +39,26 @@
         </LinearLayout>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="569dp"
+        android:background="#6ec6ff"
+        android:orientation="vertical"
+        android:padding="20dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="20dp"
-            android:background="#6ec6ff">
+            android:background="@color/background_color"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/add_ten_pl_recycler"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:background="@color/background_color">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/add_ten_pl_recycler"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-
+                android:layout_height="match_parent" />
         </LinearLayout>
+
+    </LinearLayout>
 
 
     </LinearLayout>

@@ -2,44 +2,50 @@
 <RelativeLayout
     android:windowSoftInputMode="adjustPan"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.Toolbar
+        style="@style/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/top_color"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_height="30dp"
+                android:id="@+id/ten_con_back"
+                style="@style/toolBarsImg" />
+
+            <TextView
+                android:textSize="20dp"
+                android:layout_height="90dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="40dp"
+                style="@style/toolBarText"
+                android:text="@string/all_list"
+                app:fontFamily="@font/allerta">
+            </TextView>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:background="@color/top_color"
-        android:orientation="horizontal"
-        android:padding="10dp">
-
-        <ImageView
-            android:id="@+id/ten_con_back"
-            style="@style/toolBarsImg" />
-
-        <TextView
-            android:layout_height="90dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginLeft="50dp"
-            style="@style/toolBarText"
-            android:text="@string/all_list"
-            app:fontFamily="@font/allerta">
-        </TextView>
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="572dp"
+        android:layout_height="548dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="54dp"
         android:background="#6ec6ff"
         android:orientation="vertical"
         android:padding="30dp">
@@ -98,7 +104,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView_ten_name"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 
             <TextView
-                app:fontFamily="@font/allerta"
                 android:id="@+id/textView_ten_name"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
@@ -109,50 +114,52 @@
                 android:text="textView"
                 android:textColor="@color/top_color"
                 android:textSize="20dp"
+                app:fontFamily="@font/allerta"
                 app:layout_constraintBottom_toTopOf="@+id/button_ten_message"
                 app:layout_constraintEnd_toEndOf="@+id/imageView4"
                 app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
             <TextView
-                app:fontFamily="@font/allerta"
                 android:id="@+id/textView_ten_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="39dp"
+                android:layout_marginBottom="80dp"
                 android:gravity="center"
                 android:text="TextView"
                 android:textColor="@color/top_color"
                 android:textSize="20dp"
+                app:fontFamily="@font/allerta"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView_ten_phone" />
 
             <TextView
-                app:fontFamily="@font/allerta"
                 android:id="@+id/textView_ten_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="5dp"
                 android:gravity="center"
                 android:text="TextView"
                 android:textColor="@color/top_color"
                 android:textSize="20dp"
+                app:fontFamily="@font/allerta"
                 app:layout_constraintBottom_toTopOf="@+id/textView_ten_address"
                 app:layout_constraintStart_toStartOf="@+id/textView_ten_address"
                 app:layout_constraintTop_toBottomOf="@+id/textView_ten_email" />
 
+
             <TextView
-                app:fontFamily="@font/allerta"
                 android:id="@+id/textView_ten_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="27dp"
+                android:layout_marginBottom="5dp"
                 android:gravity="center"
                 android:text="TextView"
                 android:textColor="@color/top_color"
                 android:textSize="20dp"
+                app:fontFamily="@font/allerta"
                 app:layout_constraintBottom_toTopOf="@+id/textView_ten_phone"
                 app:layout_constraintStart_toStartOf="@+id/textView_ten_phone"
                 app:layout_constraintTop_toBottomOf="@+id/button_ten_message" />
