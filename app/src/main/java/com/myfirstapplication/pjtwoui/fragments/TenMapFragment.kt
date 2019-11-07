@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
@@ -67,6 +68,8 @@ class TenMapFragment: Fragment(), OnMapReadyCallback, GoogleMap.OnInfoWindowClic
     }
 
     override fun onMapReady(map: GoogleMap?) {
+
+
         map?.let {
 
 //            googleMap = it
@@ -115,6 +118,9 @@ class TenMapFragment: Fragment(), OnMapReadyCallback, GoogleMap.OnInfoWindowClic
                     }
 
                 }
+
+                val chicago = LatLng(41.881832, -87.623177)
+                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(chicago, 5.0f))
 
 //                googleMap.setOnInfoWindowClickListener {
 //

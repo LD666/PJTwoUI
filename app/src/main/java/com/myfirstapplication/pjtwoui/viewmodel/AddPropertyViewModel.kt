@@ -68,7 +68,7 @@ class AddPropertyViewModel: ViewModel() {
 
         var myTk = myTask()
         var fulladdress = "$address,$city,$state $country"
-        var getMyRes = myTk.execute(fulladdress).get(20,TimeUnit.SECONDS)
+        var getMyRes = myTk.execute(fulladdress).get(1,TimeUnit.MINUTES)
 
         if(getMyRes != "null"){
             Latitude = getMyRes.split(" ")[0]
@@ -82,13 +82,13 @@ class AddPropertyViewModel: ViewModel() {
 //        Log.i("showRes", longitude)
 
 
-            if(Latitude != null && longitude != null){
+        if(Latitude != null && longitude != null){
 
-                addProResponse = UserRepositories().addPro(address!!, city!!, state!!, country!!, status!!, price!!, mortage!!, Latitude!!, longitude!!)
-                addProInterface?.onSuccess(addProResponse!!)
-            }else{
-                addProInterface?.onNotAnAdd()
-            }
+            addProResponse = UserRepositories().addPro(address!!, city!!, state!!, country!!, status!!, price!!, mortage!!, Latitude!!, longitude!!)
+            addProInterface?.onSuccess(addProResponse!!)
+        }else{
+            addProInterface?.onNotAnAdd()
+        }
 
     }
 

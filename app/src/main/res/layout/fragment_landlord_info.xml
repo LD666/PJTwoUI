@@ -36,7 +36,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="549dp"
-        android:background="#6ec6ff"
         android:orientation="vertical"
         android:padding="20dp">
 
@@ -71,10 +70,23 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_landlord_sign_out"
                 style="@style/button"
+                android:visibility="gone"
                 android:layout_marginTop="60dp"
                 android:text="@string/sign_out"
                 app:cornerRadius="20dp"
                 app:fontFamily="@font/allerta"></com.google.android.material.button.MaterialButton>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/lan_s_out_google"
+                style="@style/button"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:text="Google Signout"
+                android:visibility="gone"
+                android:layout_width="200dp"
+                app:cornerRadius="20dp"
+                app:fontFamily="@font/allerta">
+            </com.google.android.material.button.MaterialButton>
 
 
         </LinearLayout>

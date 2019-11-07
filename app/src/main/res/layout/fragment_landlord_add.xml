@@ -57,9 +57,8 @@
             android:layout_marginEnd="0dp"
             android:layout_marginRight="0dp"
             android:layout_marginBottom="56dp"
-            android:background="#6ec6ff"
             android:orientation="vertical"
-            android:padding="30dp">
+            android:padding="15dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -171,6 +170,7 @@
 
                 <com.google.android.material.button.MaterialButton
                     style="@style/button"
+                    android:layout_width="250dp"
                     android:layout_marginTop="30dp"
                     android:onClick="@{addPropertyViewModel::onProAdd}"
                     android:text="@string/property_add"

@@ -138,6 +138,19 @@ class UserRepositories {
         Log.i("uinfoList", userID.toString())
         Log.i("uinfoList", type.toString())
 
+        var fak = MyApplication.context.getSharedPreferences("fakLog", Context.MODE_PRIVATE)
+        var tryFak = fak.getString("fake", null)
+
+        if(tryFak == "fakeIt"){
+            userID = "158"
+            type = "landlord"
+
+            Log.i("showFakeIn", fak.getString("fake", null))
+            Log.i("showFakeIn", userID)
+            Log.i("showFakeIn", type)
+
+        }
+
         UserApi().proList(userID!!, type!!).enqueue(object: Callback<PropertyList>{
 
             override fun onFailure(call: Call<PropertyList>, t: Throwable) {
@@ -171,9 +184,41 @@ class UserRepositories {
 
         var addProResponse = MutableLiveData<JsonObject>()
 
+//        var fak = MyApplication.context.getSharedPreferences("fakLog", Context.MODE_PRIVATE)
+//        if(fak.getString("fake", null) == "fakeIt"){
+//            var faUserID = "1"
+//            var faType = "landlord"
+//            var faEmail = "1"
+//
+//            var userInfo = MyApplication.context.getSharedPreferences("saveUserInfo", Context.MODE_PRIVATE)
+//            var editor = userInfo.edit()
+//
+//            editor.putString("uid", faUserID)
+//            editor.putString("utype", faType)
+//            editor.putString("uemail", faEmail)
+//            editor.commit()
+//
+//
+//        }
+
+
         var userInfo = MyApplication.context.getSharedPreferences("saveUserInfo", Context.MODE_PRIVATE)
         var userID = userInfo.getString("uid", null)
         var type = userInfo.getString("utype", null)
+
+
+        var fak = MyApplication.context.getSharedPreferences("fakLog", Context.MODE_PRIVATE)
+        var tryFak = fak.getString("fake", null)
+
+        if(tryFak == "fakeIt"){
+            userID = "158"
+            type = "landlord"
+
+            Log.i("showFakeIn", fak.getString("fake", null))
+            Log.i("showFakeIn", userID)
+            Log.i("showFakeIn", type)
+
+        }
 
 
         UserApi().addProperty(address, city, state, country, pro_status, status, mortage_info, userID!!, type!!, latitude, longitude)
@@ -223,6 +268,18 @@ class UserRepositories {
         var userInfo = MyApplication.context.getSharedPreferences("saveUserInfo", Context.MODE_PRIVATE)
         var userID = userInfo.getString("uid", null)
 
+        var fak = MyApplication.context.getSharedPreferences("fakLog", Context.MODE_PRIVATE)
+        var tryFak = fak.getString("fake", null)
+
+        if(tryFak == "fakeIt"){
+            userID = "158"
+
+            Log.i("showFakeIn", fak.getString("fake", null))
+            Log.i("showFakeIn", userID)
+
+        }
+
+
         UserApi().tenantList(userID!!).enqueue(object: Callback<TenantsList>{
 
             override fun onFailure(call: Call<TenantsList>, t: Throwable) {
@@ -247,6 +304,17 @@ class UserRepositories {
 
         var userInfo = MyApplication.context.getSharedPreferences("saveUserInfo", Context.MODE_PRIVATE)
         var userID = userInfo.getString("uid", null)
+
+        var fak = MyApplication.context.getSharedPreferences("fakLog", Context.MODE_PRIVATE)
+        var tryFak = fak.getString("fake", null)
+
+        if(tryFak == "fakeIt"){
+            userID = "158"
+
+            Log.i("showFakeIn", fak.getString("fake", null))
+            Log.i("showFakeIn", userID)
+
+        }
 
         var saveProId = MyApplication.context.getSharedPreferences("theProID", Context.MODE_PRIVATE)
         var proId = saveProId.getString("saveID", null)

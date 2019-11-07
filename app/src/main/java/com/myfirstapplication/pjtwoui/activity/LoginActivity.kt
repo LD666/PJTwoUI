@@ -21,6 +21,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.gson.JsonObject
 import com.myfirstapplication.pjtwoui.R
+import com.myfirstapplication.pjtwoui.data.network.UserApi
 import com.myfirstapplication.pjtwoui.data.repositories.MyApplication
 import com.myfirstapplication.pjtwoui.data.repositories.MyApplication.Companion.context
 import com.myfirstapplication.pjtwoui.databinding.ActivityLoginBinding
@@ -53,6 +54,8 @@ class LoginActivity : AppCompatActivity(), LoginInterface {
                 Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
                 var myIntent = Intent(this, TennantActivity::class.java)
                 startActivity(myIntent)
+            }else{
+                Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
             }
 
         })
@@ -109,7 +112,6 @@ class LoginActivity : AppCompatActivity(), LoginInterface {
 
             val signInIntent = mGoogleSignInClient.signInIntent
             startActivityForResult(signInIntent, RC_SIGN_IN)
-            showSettingDialoge()
 
         })
 
@@ -125,6 +127,7 @@ class LoginActivity : AppCompatActivity(), LoginInterface {
             // a listener.
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             handleSignInResult(task)
+            showSettingDialoge()
 
 //            var myIntent = Intent(this, TennantActivity::class.java)
 //            startActivity(myIntent)
@@ -144,31 +147,10 @@ class LoginActivity : AppCompatActivity(), LoginInterface {
     }
 
 
-    private     inner class myTask : AsyncTask<String, Double, String>(){
-
-        var total = 5
-
-
-        override fun doInBackground(vararg params: String): String {
-
-            for(i in 0 ..total){
-                Thread.sleep(1000)
-                //var e = "hhh"
-                publishProgress(i.toDouble())
-            }
-
-            var str = "Welcome..."
-            return str
-
-        }
-
-    }
-
-
     private fun showSettingDialoge(){
         var builder = AlertDialog.Builder(this)
-        builder.setTitle("You can only use this app as tenant")
-        builder.setMessage("Google login only allow you to use this app as tenant")
+        builder.setTitle("Tenant or Landlord")
+        builder.setMessage("LOGIN as Tenant or Landlord")
         builder.setPositiveButton("Login as tenant", object: DialogInterface.OnClickListener{
             override fun onClick(dialoge: DialogInterface?, p1: Int) {
 
@@ -177,9 +159,20 @@ class LoginActivity : AppCompatActivity(), LoginInterface {
             }
 
         })
-        builder.setNegativeButton("Cancel", object: DialogInterface.OnClickListener{
+        builder.setNegativeButton("Login as Landlord", object: DialogInterface.OnClickListener{
             override fun onClick(dialoge: DialogInterface?, p1: Int) {
-                dialoge!!.dismiss()
+
+                var fak = getSharedPreferences("fakLog", Context.MODE_PRIVATE)
+                var editor = fak.edit()
+                editor.putString("fake", "fakeIt")
+                editor.commit()
+
+                Log.i("showFake", fak.getString("fake", null))
+
+
+                var myIntent = Intent(this@LoginActivity, LandlordActivity::class.java)
+                startActivity(myIntent)
+
             }
 
         })

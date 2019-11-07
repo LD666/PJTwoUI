@@ -7,8 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.LandlordActivity"
-    android:id="@+id/landlord_main"
-    android:background="@color/colorPrimaryDark">
+    android:id="@+id/landlord_main">
 
     <LinearLayout
         android:layout_width="match_parent"

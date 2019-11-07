@@ -55,7 +55,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="20dp"
-            android:background="#6ec6ff"
             >
 
             <LinearLayout
@@ -73,6 +72,7 @@
                         android:id="@+id/edit_text_MainEmail"
                         android:textColor="@color/top_color"
                         android:hint="Email"
+                        android:visibility="invisible"
                         app:fontFamily="@font/allerta"
                         android:inputType="text"
                         android:text="@={registerdata.email}"
@@ -91,6 +91,7 @@
                         android:textColor="@color/top_color"
                         android:hint="Landlord Email"
                         android:inputType="text"
+                        android:visibility="invisible"
                         app:fontFamily="@font/allerta"
                         android:text="@={registerdata.landlordEmail}"
                         style="@style/signUpInEditTextStyle">
@@ -110,6 +111,7 @@
                         android:textColor="@color/top_color"
                         android:inputType="textPassword"
                         android:text="@={registerdata.password}"
+                        android:visibility="invisible"
                         style="@style/signUpInEditTextStyle">
                     </com.google.android.material.textfield.TextInputEditText>
 
@@ -126,35 +128,36 @@
                         android:layout_width="180dp"
                         android:layout_height="match_parent" >
 
-                        <RadioButton
-                            app:fontFamily="@font/allerta"
-                            android:layout_marginLeft="40dp"
-                            android:textColor="@color/top_color"
-                            android:onClick="@{registerdata::isLandlord}"
-                            android:layout_marginTop="15dp"
-                            android:id="@+id/isLandlord"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/landlord" />
-
-                        <RadioButton
-                            app:fontFamily="@font/allerta"
-                            android:layout_marginLeft="40dp"
-                            android:textColor="@color/top_color"
-                            android:onClick="@{registerdata::isTenant}"
-                            android:id="@+id/isTenant"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/tenant" />
-
                         <CheckBox
                             app:fontFamily="@font/allerta"
-                            android:layout_marginLeft="40dp"
+
                             android:id="@+id/checkBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textColor="@color/top_color"
-                            android:text="Agreement" />
+                            android:text="I agree to terms" />
+
+                        <RadioButton
+                            android:id="@+id/isLandlord"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:onClick="@{registerdata::isLandlord}"
+                            android:text="@string/landlord"
+                            android:visibility="gone"
+                            android:textColor="@color/top_color"
+                            app:fontFamily="@font/allerta" />
+
+                        <RadioButton
+                            app:fontFamily="@font/allerta"
+                            android:textColor="@color/top_color"
+                            android:onClick="@{registerdata::isTenant}"
+                            android:id="@+id/isTenant"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tenant" />
+
                     </RadioGroup>
 
                     <LinearLayout
@@ -191,15 +194,6 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <com.google.android.material.button.MaterialButton
-                        app:cornerRadius="20dp"
-                        android:visibility="gone"
-                        app:fontFamily="@font/allerta"
-                        android:id="@+id/button_Agreemnt"
-                        android:text="Agreement"
-                        style="@style/button"
-                        android:layout_marginTop="0dp">
-                    </com.google.android.material.button.MaterialButton>
 
                     <com.google.android.material.button.MaterialButton
                         android:onClick="@{registerdata::onRegister}"
@@ -217,6 +211,19 @@
                         android:id="@+id/sign_in_button"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        app:cornerRadius="20dp"
+                        app:fontFamily="@font/allerta"
+                        android:id="@+id/button_Agreemnt"
+                        android:text="Terms and Conditions"
+                        android:gravity="center"
+                        android:textColor="@color/colorPrimary"
+                        style="@style/button"
+                        android:layout_marginTop="150dp">
+                    </TextView>
 
                 </LinearLayout>
 

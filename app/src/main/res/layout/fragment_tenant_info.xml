@@ -35,7 +35,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="552dp"
-        android:background="#6ec6ff"
         android:orientation="vertical"
         android:padding="20dp">
 
@@ -90,8 +89,10 @@
                 android:layout_marginTop="60dp"
                 android:text="Google Signout"
                 android:visibility="gone"
+                android:layout_width="200dp"
                 app:cornerRadius="20dp"
-                app:fontFamily="@font/allerta"></com.google.android.material.button.MaterialButton>
+                app:fontFamily="@font/allerta">
+            </com.google.android.material.button.MaterialButton>
 
 
         </LinearLayout>

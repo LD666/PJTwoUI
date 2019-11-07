@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
@@ -85,7 +86,6 @@ class MyMapFragment: Fragment(), OnMapReadyCallback, GoogleMap.OnInfoWindowClick
     override fun onMapReady(map: GoogleMap?) {
 
 
-
         map?.let { it ->
             googleMap = it
 
@@ -139,6 +139,10 @@ class MyMapFragment: Fragment(), OnMapReadyCallback, GoogleMap.OnInfoWindowClick
 
 //            val sydney = LatLng(-34.0, 151.0)
 //            googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
+
+
+            val chicago = LatLng(41.881832, -87.623177)
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(chicago, 5.0f))
 
         }
     }

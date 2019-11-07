@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
@@ -58,7 +59,6 @@ class RegisterActivity : AppCompatActivity(), RegisterInterface {
 
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_register)
@@ -74,13 +74,13 @@ class RegisterActivity : AppCompatActivity(), RegisterInterface {
 
         var agr = getSharedPreferences("agr", Context.MODE_PRIVATE)
 
-        if(agr.getString("isAgr", null) == null){
-            button_register.visibility = View.GONE
-            button_Agreemnt.visibility = View.VISIBLE
-        }else{
-            button_register.visibility = View.VISIBLE
-            button_Agreemnt.visibility = View.GONE
-        }
+//        if(agr.getString("isAgr", null) == null){
+////            button_register.visibility = View.GONE
+//            button_Agreemnt.visibility = View.VISIBLE
+//        }else{
+////            button_register.visibility = View.VISIBLE
+//            button_Agreemnt.visibility = View.GONE
+//        }
 
 
 
@@ -91,12 +91,34 @@ class RegisterActivity : AppCompatActivity(), RegisterInterface {
 
         })
 
-        checkBox.visibility = View.GONE
+        checkBox.visibility = View.VISIBLE
 
         button_Agreemnt.setOnClickListener(View.OnClickListener {
 
             var myIntent = Intent(this, UserAgreementActivity::class.java)
             startActivity(myIntent)
+
+        })
+
+
+        checkBox.setOnClickListener(View.OnClickListener {
+
+
+            if(checkBox.isChecked){
+                edit_text_MainEmail.visibility = View.VISIBLE
+                edit_text_landEmail.visibility = View.VISIBLE
+                edit_text_regPassword.visibility = View.VISIBLE
+                isLandlord.visibility = View.VISIBLE
+                isTenant.visibility = View.VISIBLE
+                button_register.visibility = View.VISIBLE
+            }else{
+                edit_text_MainEmail.visibility = View.GONE
+                edit_text_landEmail.visibility = View.GONE
+                edit_text_regPassword.visibility = View.GONE
+                isLandlord.visibility = View.GONE
+                isTenant.visibility = View.GONE
+                button_register.visibility = View.GONE
+            }
 
         })
 

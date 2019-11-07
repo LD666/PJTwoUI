@@ -58,7 +58,6 @@
             android:layout_marginEnd="0dp"
             android:layout_marginRight="0dp"
             android:layout_marginBottom="54dp"
-            android:background="#6ec6ff"
             android:orientation="vertical"
             android:padding="30dp">
 
@@ -80,7 +79,6 @@
                     android:id="@+id/edit_text_dt_address_ten"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
-                    android:gravity="center"
                     android:textColor="@color/top_color"
                     android:textSize="20dp"
                     app:fontFamily="@font/allerta"></TextView>
@@ -90,7 +88,6 @@
                     android:id="@+id/edit_text_dt_city_ten"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
-                    android:gravity="center"
                     android:textColor="@color/top_color"
                     android:textSize="20dp"
                     app:fontFamily="@font/allerta"></TextView>
@@ -100,7 +97,6 @@
                     android:id="@+id/edit_text_dt_state_ten"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
-                    android:gravity="center"
                     android:textColor="@color/top_color"
                     android:textSize="20dp"
                     app:fontFamily="@font/allerta"></TextView>
@@ -110,7 +106,6 @@
                     android:id="@+id/edit_text_dt_country_ten"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
-                    android:gravity="center"
                     android:textColor="@color/top_color"
                     android:textSize="20dp"
                     app:fontFamily="@font/allerta"></TextView>
@@ -120,7 +115,6 @@
                     android:id="@+id/edit_text_dt_status_ten"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
-                    android:gravity="center"
                     android:textColor="@color/top_color"
                     android:textSize="20dp"
                     app:fontFamily="@font/allerta"></TextView>
@@ -130,7 +124,6 @@
                     android:id="@+id/edit_text_dt_price_ten"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
-                    android:gravity="center"
                     android:textColor="@color/top_color"
                     android:textSize="20dp"
                     app:fontFamily="@font/allerta"></TextView>

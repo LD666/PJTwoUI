@@ -59,7 +59,6 @@
             android:layout_marginEnd="0dp"
             android:layout_marginRight="0dp"
             android:layout_marginBottom="54dp"
-            android:background="#6ec6ff"
             android:orientation="vertical"
             android:padding="30dp">
 
@@ -74,7 +73,6 @@
                     android:id="@+id/edit_text_rm_id"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
-                    android:gravity="center"
                     android:textColor="@color/top_color"
                     android:textSize="20dp"
                     app:fontFamily="@font/allerta"></TextView>
@@ -83,7 +81,6 @@
                     android:id="@+id/edit_text_rm_address"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
-                    android:gravity="center"
                     android:textColor="@color/top_color"
                     android:textSize="20dp"
                     app:fontFamily="@font/allerta"></TextView>
@@ -93,7 +90,6 @@
                     android:id="@+id/edit_text_rm_city"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
-                    android:gravity="center"
                     android:textColor="@color/top_color"
                     android:textSize="20dp"
                     app:fontFamily="@font/allerta"></TextView>
@@ -103,7 +99,6 @@
                     android:id="@+id/edit_text_rm_state"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
-                    android:gravity="center"
                     android:textColor="@color/top_color"
                     android:textSize="20dp"
                     app:fontFamily="@font/allerta"></TextView>
@@ -113,7 +108,6 @@
                     android:id="@+id/edit_text_rm_country"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
-                    android:gravity="center"
                     android:textColor="@color/top_color"
                     android:textSize="20dp"
                     app:fontFamily="@font/allerta"></TextView>
@@ -123,7 +117,6 @@
                     android:id="@+id/edit_text_rm_status"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
-                    android:gravity="center"
                     android:textColor="@color/top_color"
                     android:textSize="20dp"
                     app:fontFamily="@font/allerta"></TextView>
@@ -133,7 +126,6 @@
                     android:id="@+id/edit_text_rm_price"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
-                    android:gravity="center"
                     android:textColor="@color/top_color"
                     android:textSize="20dp"
                     app:fontFamily="@font/allerta"></TextView>
@@ -143,7 +135,6 @@
                     android:id="@+id/edit_text_rm_mortage_info"
                     style="@style/signUpInEditTextStyle"
                     android:layout_marginTop="10dp"
-                    android:gravity="center"
                     android:textColor="@color/top_color"
                     android:textSize="20dp"
                     app:fontFamily="@font/allerta"></TextView>
